@@ -22,7 +22,7 @@ struct ContentView: View {
     //MARK: - initializar
 
     init() {
-        configuration = Configuration(apiKey: "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")
+        configuration = Configuration(apiKey: "")
         eventLoopGroup = MultiThreadedEventLoopGroup(numberOfThreads: 1)
         httpClient = HTTPClient(eventLoopGroupProvider: .shared(eventLoopGroup))
         openAIClient = OpenAIKit.Client(httpClient: httpClient, configuration: configuration)
