@@ -15,16 +15,30 @@ struct HomeView: View {
             Text("Qual seu próximo destino?")
                 .font(.system(size: 32, weight: .bold, design: .default))
                 .fontWeight(.bold)
-                .foregroundColor(.black)
-                .padding(.top, 70)
+                .foregroundColor(Color(hex: "131F2A"))
+                .padding(.top, 130)
 
 
             SearchBar(searchText: $searchText)
                 .padding(.top, 8)
 
+            Text("Perto de você")
+                .font(.system(size: 18, weight: .bold))
+                .fontWeight(.bold)
+                .padding(.top, 32)
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                    ForEach(0..<5) { index in
+                        CardView()
+                    }
+                }
+            }
             Spacer()
         }
         .padding(.horizontal, 16)
+        .background(Color(hex: "F5F8F9"))
+        .ignoresSafeArea()
     }
 }
 
@@ -71,5 +85,14 @@ extension Color {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+
+struct CardView: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 16)
+            .frame(width: 200, height: 130)
+            .foregroundColor(.darkGray)
+            .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
     }
 }

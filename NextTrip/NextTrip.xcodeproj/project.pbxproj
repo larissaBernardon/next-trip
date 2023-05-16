@@ -126,7 +126,6 @@
 		6AFBCD172A119EA10050EC95 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				6AFBCD232A1323E30050EC95 /* Profile */,
 				6AFBCD1A2A119EE80050EC95 /* Scenes */,
 			);
 			path = Presentation;
@@ -149,6 +148,7 @@
 		6AFBCD1A2A119EE80050EC95 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6AFBCD232A1323E30050EC95 /* Profile */,
 				6AFBCD202A1323B40050EC95 /* Trips */,
 				6AFBCD1D2A1321B30050EC95 /* Home */,
 				6A95669529E2190000CD6155 /* Chat */,
