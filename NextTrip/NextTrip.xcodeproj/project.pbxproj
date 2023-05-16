@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		6A95669729E2192B00CD6155 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A95669629E2192B00CD6155 /* ChatView.swift */; };
 		6A95669A29E2259200CD6155 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A95669929E2259200CD6155 /* ColorExtension.swift */; };
-		6AFD41AA29E1F59600AC512B /* NextTripApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD41A929E1F59600AC512B /* NextTripApp.swift */; };
-		6AFD41AC29E1F59600AC512B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD41AB29E1F59600AC512B /* ContentView.swift */; };
+		6AFBCD1C2A1321270050EC95 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBCD1B2A1321270050EC95 /* TabBarView.swift */; };
+		6AFBCD1F2A1321D20050EC95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBCD1E2A1321D20050EC95 /* HomeView.swift */; };
+		6AFBCD222A1323CE0050EC95 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBCD212A1323CE0050EC95 /* TripsView.swift */; };
+		6AFBCD252A1323FC0050EC95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBCD242A1323FC0050EC95 /* ProfileView.swift */; };
+		6AFD41AA29E1F59600AC512B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD41A929E1F59600AC512B /* Main.swift */; };
 		6AFD41AE29E1F59600AC512B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFD41AD29E1F59600AC512B /* Assets.xcassets */; };
 		6AFD41B129E1F59600AC512B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFD41B029E1F59600AC512B /* Preview Assets.xcassets */; };
 		6AFD41BB29E1F59700AC512B /* NextTripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD41BA29E1F59700AC512B /* NextTripTests.swift */; };
@@ -39,9 +42,12 @@
 /* Begin PBXFileReference section */
 		6A95669629E2192B00CD6155 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		6A95669929E2259200CD6155 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		6AFBCD1B2A1321270050EC95 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		6AFBCD1E2A1321D20050EC95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		6AFBCD212A1323CE0050EC95 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
+		6AFBCD242A1323FC0050EC95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		6AFD41A629E1F59600AC512B /* NextTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AFD41A929E1F59600AC512B /* NextTripApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextTripApp.swift; sourceTree = "<group>"; };
-		6AFD41AB29E1F59600AC512B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6AFD41A929E1F59600AC512B /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		6AFD41AD29E1F59600AC512B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AFD41B029E1F59600AC512B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6AFD41B629E1F59600AC512B /* NextTripTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NextTripTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,12 +83,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6A95669529E2190000CD6155 /* ChatView */ = {
+		6A95669529E2190000CD6155 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
 				6A95669629E2192B00CD6155 /* ChatView.swift */,
 			);
-			path = ChatView;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		6A95669829E2258400CD6155 /* Utils */ = {
@@ -91,6 +97,88 @@
 				6A95669929E2259200CD6155 /* ColorExtension.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		6AFBCD142A119C720050EC95 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBCD152A119C7D0050EC95 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6AFBCD152A119C7D0050EC95 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6AFD41AD29E1F59600AC512B /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		6AFBCD162A119D550050EC95 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBCD1B2A1321270050EC95 /* TabBarView.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		6AFBCD172A119EA10050EC95 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBCD232A1323E30050EC95 /* Profile */,
+				6AFBCD1A2A119EE80050EC95 /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		6AFBCD182A119EA90050EC95 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		6AFBCD192A119EB00050EC95 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6AFBCD1A2A119EE80050EC95 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBCD202A1323B40050EC95 /* Trips */,
+				6AFBCD1D2A1321B30050EC95 /* Home */,
+				6A95669529E2190000CD6155 /* Chat */,
+				6AFBCD162A119D550050EC95 /* Tabbar */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6AFBCD1D2A1321B30050EC95 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBCD1E2A1321D20050EC95 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6AFBCD202A1323B40050EC95 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBCD212A1323CE0050EC95 /* TripsView.swift */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
+		6AFBCD232A1323E30050EC95 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBCD242A1323FC0050EC95 /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		6AFD419D29E1F59600AC512B = {
@@ -117,10 +205,11 @@
 			isa = PBXGroup;
 			children = (
 				6A95669829E2258400CD6155 /* Utils */,
-				6A95669529E2190000CD6155 /* ChatView */,
-				6AFD41A929E1F59600AC512B /* NextTripApp.swift */,
-				6AFD41AB29E1F59600AC512B /* ContentView.swift */,
-				6AFD41AD29E1F59600AC512B /* Assets.xcassets */,
+				6AFBCD142A119C720050EC95 /* Resources */,
+				6AFBCD192A119EB00050EC95 /* Data */,
+				6AFBCD182A119EA90050EC95 /* Domain */,
+				6AFBCD172A119EA10050EC95 /* Presentation */,
+				6AFD41A929E1F59600AC512B /* Main.swift */,
 				6AFD41AF29E1F59600AC512B /* Preview Content */,
 			);
 			path = NextTrip;
@@ -287,9 +376,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AFD41AC29E1F59600AC512B /* ContentView.swift in Sources */,
 				6A95669729E2192B00CD6155 /* ChatView.swift in Sources */,
-				6AFD41AA29E1F59600AC512B /* NextTripApp.swift in Sources */,
+				6AFD41AA29E1F59600AC512B /* Main.swift in Sources */,
+				6AFBCD1C2A1321270050EC95 /* TabBarView.swift in Sources */,
+				6AFBCD222A1323CE0050EC95 /* TripsView.swift in Sources */,
+				6AFBCD1F2A1321D20050EC95 /* HomeView.swift in Sources */,
+				6AFBCD252A1323FC0050EC95 /* ProfileView.swift in Sources */,
 				6A95669A29E2259200CD6155 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -391,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
