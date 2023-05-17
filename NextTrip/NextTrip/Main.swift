@@ -10,9 +10,14 @@ import SwiftUI
 @main
 struct Main: App {
     var body: some Scene {
-        return WindowGroup {
-           TabBarView()
-                .background(Color(hex: "F5F8F9")).ignoresSafeArea(.all)
+        WindowGroup {
+            TabBarView()
+                .overlay(alignment: .top, content: {
+                    Color.clear
+                        .background(Color(hex: "F5F8F9"))
+                        .edgesIgnoringSafeArea(.top)
+                        .frame(height: 0)
+                })
         }
     }
 }
