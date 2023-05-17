@@ -13,11 +13,13 @@ struct HomeView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
+                Spacer()
+                LocationView()
                 Text("Qual seu próximo destino?")
                     .font(.system(size: 32, weight: .bold, design: .default))
                     .fontWeight(.bold)
                     .foregroundColor(Color(hex: "131F2A"))
-                    .padding(.top, 130)
+                    .padding(.top, 30)
 
                 SearchBar(searchText: $searchText)
                     .padding(.top, 8)
@@ -41,14 +43,36 @@ struct HomeView: View {
                     .padding(.top, 32)
 
                 VStack(spacing: 15) {
-                    ForEach(1...20, id: \.self) { index in
+                    ForEach(1...4, id: \.self) { index in
                         SmallListItem()
                     }
                 }
             }
         }
         .padding(.horizontal, 16)
-        .background(Color(hex: "F5F8F9")).ignoresSafeArea(.all)
+        .background(Color(hex: "F5F8F9"))
+    }
+}
+
+struct LocationView: View {
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "location.circle.fill")
+                .resizable()
+                .frame(width: 20, height: 20)
+                .foregroundColor(Color(hex: "74BBD5"))
+
+            Text("Soledade, BRA")
+                .font(.subheadline)
+                .foregroundColor(.black)
+                .padding(.vertical, 8)
+                .padding(.horizontal, 12)
+                .background(Color(hex: "E9F2F5"))
+
+        }
+        .padding(.horizontal, 12)
+        .background(Color(hex: "E9F2F5"))
+        .cornerRadius(10)
     }
 }
 
