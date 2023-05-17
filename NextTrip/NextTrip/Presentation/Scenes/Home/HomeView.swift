@@ -11,34 +11,44 @@ struct HomeView: View {
     @State private var searchText = ""
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Qual seu próximo destino?")
-                .font(.system(size: 32, weight: .bold, design: .default))
-                .fontWeight(.bold)
-                .foregroundColor(Color(hex: "131F2A"))
-                .padding(.top, 130)
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .leading) {
+                Text("Qual seu próximo destino?")
+                    .font(.system(size: 32, weight: .bold, design: .default))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color(hex: "131F2A"))
+                    .padding(.top, 130)
 
+                SearchBar(searchText: $searchText)
+                    .padding(.top, 8)
 
-            SearchBar(searchText: $searchText)
-                .padding(.top, 8)
+                Text("Destinos populares")
+                    .font(.system(size: 18, weight: .bold))
+                    .fontWeight(.bold)
+                    .padding(.top, 32)
 
-            Text("Perto de você")
-                .font(.system(size: 18, weight: .bold))
-                .fontWeight(.bold)
-                .padding(.top, 32)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        ForEach(0..<5) { index in
+                            MediumCardView()
+                        }
+                    }
+                }
 
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 20) {
-                    ForEach(0..<5) { index in
-                        CardView()
+                Text("Perto de você")
+                    .font(.system(size: 18, weight: .bold))
+                    .fontWeight(.bold)
+                    .padding(.top, 32)
+
+                VStack(spacing: 15) {
+                    ForEach(1...20, id: \.self) { index in
+                        SmallListItem()
                     }
                 }
             }
-            Spacer()
         }
         .padding(.horizontal, 16)
-        .background(Color(hex: "F5F8F9"))
-        .ignoresSafeArea()
+        .background(Color(hex: "F5F8F9")).ignoresSafeArea(.all)
     }
 }
 
@@ -88,11 +98,39 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
-struct CardView: View {
+struct MediumCardView: View {
     var body: some View {
-        RoundedRectangle(cornerRadius: 16)
+        RoundedRectangle(cornerRadius: 10)
             .frame(width: 200, height: 130)
-            .foregroundColor(.darkGray)
+            .foregroundColor(.gray)
             .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
+    }
+}
+
+struct SmallListItem: View {
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "square.fill")
+                .resizable()
+                .frame(width: 60, height: 60)
+                .foregroundColor(.gray)
+
+            VStack(alignment: .leading) {
+                Text("Título")
+                    .font(.headline)
+
+                Text("Subtítulo")
+                    .font(.subheadline)
+            }
+            Spacer()
+            Image(systemName: "arrow.right")
+                .foregroundColor(.gray)
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(.white)
+                .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
+        )
     }
 }

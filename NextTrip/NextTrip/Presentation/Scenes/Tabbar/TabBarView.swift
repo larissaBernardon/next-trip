@@ -34,7 +34,6 @@ struct TabBarView: View {
                 .tag(2)
         }
         .accentColor(Color(hex: "222222"))
-
     }
 }
 
