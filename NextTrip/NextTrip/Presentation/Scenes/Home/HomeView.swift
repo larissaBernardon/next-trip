@@ -45,7 +45,7 @@ struct HomeView: View {
 
                 VStack(spacing: 15) {
                     ForEach(0..<3) { index in
-                        SmallListItemView()
+                        SmallListItemView(image: Image(imageNames[index]))
                     }
                 }
             }
