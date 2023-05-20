@@ -21,7 +21,7 @@ struct SplashView: View {
                     .frame(height: 0)})
         } else {
             ZStack {
-                Color.black.opacity(0.9).ignoresSafeArea()
+                Color.black.ignoresSafeArea()
                 VStack {
                     Spacer()
                     Image("airplane")
