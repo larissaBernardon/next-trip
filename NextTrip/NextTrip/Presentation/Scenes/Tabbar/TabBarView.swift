@@ -15,21 +15,21 @@ struct TabBarView: View {
             HomeView()
                 .tabItem {
                     Image(systemName: "house.fill")
-                    Text("Home")
+                    Text("Explorar")
                 }
                 .tag(0)
 
             TripsView()
                 .tabItem {
                     Image(systemName: "map")
-                    Text("Trips")
+                    Text("Viagens")
                 }
                 .tag(1)
 
             ProfileView()
                 .tabItem {
                     Image(systemName: "person")
-                    Text("Profile")
+                    Text("Perfil")
                 }
                 .tag(2)
         }
