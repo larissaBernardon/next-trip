@@ -9,13 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var searchText = ""
-    let imageNames = ["rio", "amalfi", "sydney", "ny", "paris", "london"]
+    let imageNames = ["Rio de Janeiro", "Lugano", "Cusco", "Madrid", "Sydney", "Nova Iorque", "Patagonia", "Paris", "Fernando de Noronha", "Istambul", "Londres"].shuffled()
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
                 Spacer()
-                LocationView()
+                LocationView(name: "Porto Alegre, BRA")
                 Text("Qual seu próximo destino?")
                     .font(.system(size: 32, weight: .bold, design: .default))
                     .fontWeight(.bold)
@@ -32,8 +32,8 @@ struct HomeView: View {
 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
-                        ForEach(0..<6) { index in
-                            MediumCardView(image: Image(imageNames[index]))
+                        ForEach(0..<10) { index in
+                            MediumCardView(image: Image(imageNames[index]), withOpacity: true, centeredTitle: imageNames[index])
                         }
                     }
                 }
@@ -44,7 +44,7 @@ struct HomeView: View {
                     .padding(.top, 32)
 
                 VStack(spacing: 15) {
-                    ForEach(0..<3) { index in
+                    ForEach(0..<4) { index in
                         SmallListItemView(image: Image(imageNames[index]))
                     }
                 }

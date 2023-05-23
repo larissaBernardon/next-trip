@@ -40,19 +40,13 @@ struct TripsView: View {
             }
 
             TabView(selection: $selectedIndex) {
-                VStack {
-                    Text("Ativas")
-                }
+                ActiveTripsPage()
                 .tag(0)
 
-                VStack {
-                    Text("Próximas")
-                }
+                UpcomingTripsPage()
                 .tag(1)
 
-                VStack {
-                    Text("Passadas")
-                }
+                ActiveTripsPage()
                 .tag(2)
             }
             .tabViewStyle(.page(indexDisplayMode: .never))

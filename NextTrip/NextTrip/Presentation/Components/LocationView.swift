@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LocationView: View {
+    var name: String = ""
     var body: some View {
         HStack(spacing: 10) {
             Image(systemName: "location.circle.fill")
@@ -15,7 +16,7 @@ struct LocationView: View {
                 .frame(width: 20, height: 20)
                 .foregroundColor(Color(hex: "74BBD5"))
 
-            Text("Soledade, BRA")
+            Text(name)
                 .font(.subheadline)
                 .foregroundColor(.black)
                 .padding(.vertical, 8)

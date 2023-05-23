@@ -18,7 +18,8 @@ struct SplashView: View {
                     Color.clear
                         .background(Color(hex: "F5F8F9"))
                         .edgesIgnoringSafeArea(.top)
-                    .frame(height: 0)})
+                    .frame(height: 0)
+                })
         } else {
             ZStack {
                 Color.black.ignoresSafeArea()
