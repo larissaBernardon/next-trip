@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignUpView: View {
+struct SignInView: View {
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
@@ -19,7 +19,7 @@ struct SignUpView: View {
     }
 }
 
-struct SignUpView_Previews: PreviewProvider {
+struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         SignInView()
     }

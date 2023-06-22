@@ -13,13 +13,7 @@ struct SplashView: View {
 
     var body: some View {
         if isActive {
-            TabBarView()
-                .overlay(alignment: .top, content: {
-                    Color.clear
-                        .background(Color(hex: "F5F8F9"))
-                        .edgesIgnoringSafeArea(.top)
-                    .frame(height: 0)
-                })
+            SignUpView()
         } else {
             ZStack {
                 Color.black.ignoresSafeArea()
