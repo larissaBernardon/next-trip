@@ -13,8 +13,8 @@
 		6A5F13042A367B11008CF629 /* DestinationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F13032A367B11008CF629 /* DestinationDetail.swift */; };
 		6A95669729E2192B00CD6155 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A95669629E2192B00CD6155 /* ChatView.swift */; };
 		6A95669A29E2259200CD6155 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A95669929E2259200CD6155 /* ColorExtension.swift */; };
-		6AF63B172A3A0F74002A11B1 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF63B162A3A0F74002A11B1 /* SignInView.swift */; };
-		6AF63B192A3A10B7002A11B1 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF63B182A3A10B7002A11B1 /* SignUpView.swift */; };
+		6AF63B172A3A0F74002A11B1 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF63B162A3A0F74002A11B1 /* SignUpView.swift */; };
+		6AF63B192A3A10B7002A11B1 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF63B182A3A10B7002A11B1 /* SignInView.swift */; };
 		6AFBCD1C2A1321270050EC95 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBCD1B2A1321270050EC95 /* TabBarView.swift */; };
 		6AFBCD1F2A1321D20050EC95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBCD1E2A1321D20050EC95 /* HomeView.swift */; };
 		6AFBCD222A1323CE0050EC95 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBCD212A1323CE0050EC95 /* TripsView.swift */; };
@@ -57,8 +57,8 @@
 		6A5F13032A367B11008CF629 /* DestinationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationDetail.swift; sourceTree = "<group>"; };
 		6A95669629E2192B00CD6155 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		6A95669929E2259200CD6155 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		6AF63B162A3A0F74002A11B1 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		6AF63B182A3A10B7002A11B1 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		6AF63B162A3A0F74002A11B1 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		6AF63B182A3A10B7002A11B1 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		6AFBCD1B2A1321270050EC95 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		6AFBCD1E2A1321D20050EC95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6AFBCD212A1323CE0050EC95 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 		6AF63B152A3A0F18002A11B1 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				6AF63B162A3A0F74002A11B1 /* SignInView.swift */,
-				6AF63B182A3A10B7002A11B1 /* SignUpView.swift */,
+				6AF63B162A3A0F74002A11B1 /* SignUpView.swift */,
+				6AF63B182A3A10B7002A11B1 /* SignInView.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -455,7 +455,7 @@
 				6AFD41AA29E1F59600AC512B /* Main.swift in Sources */,
 				6AFBCD1C2A1321270050EC95 /* TabBarView.swift in Sources */,
 				6AFEF63A2A15993700A53349 /* SmallListItemView.swift in Sources */,
-				6AF63B172A3A0F74002A11B1 /* SignInView.swift in Sources */,
+				6AF63B172A3A0F74002A11B1 /* SignUpView.swift in Sources */,
 				6A31521A2A1C48CF000E1D7A /* ActiveTripsPage.swift in Sources */,
 				6A5F13042A367B11008CF629 /* DestinationDetail.swift in Sources */,
 				6AFEF63D2A17F78300A53349 /* SplashView.swift in Sources */,
@@ -465,7 +465,7 @@
 				6AFBCD252A1323FC0050EC95 /* ProfileView.swift in Sources */,
 				6AFEF6362A15979100A53349 /* LocationView.swift in Sources */,
 				6A31521E2A1C5BB9000E1D7A /* ItineraryView.swift in Sources */,
-				6AF63B192A3A10B7002A11B1 /* SignUpView.swift in Sources */,
+				6AF63B192A3A10B7002A11B1 /* SignInView.swift in Sources */,
 				6A95669A29E2259200CD6155 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
