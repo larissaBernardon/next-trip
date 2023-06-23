@@ -9,7 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var searchText = ""
-    let imageNames = ["Rio de Janeiro", "Lugano", "Cusco", "Madrid", "Sydney", "Nova Iorque", "Patagonia", "Paris", "Fernando de Noronha", "Istambul", "Londres"].shuffled()
+
+    let destinations = ["Madrid", "Rio de Janeiro", "Lugano", "Cusco", "Sydney", "Nova Iorque", "Patagonia", "Fernando de Noronha", "Istambul", "Paris", "Londres"]
+
+    let nearYou = ["mercadopublico": "Mercado público", "beirario": "Estádio Beira Rio", "marioquintana": "Casa de cultura Mario quintana", "parquefarroupilha": "Parque Farroupilha", "gasometro": "Usina do gasômetro"]
 
     var body: some View {
         NavigationView {
@@ -35,7 +38,7 @@ struct HomeView: View {
                         HStack(spacing: 20) {
                             ForEach(0..<10) { index in
                                 NavigationLink(destination: DestinationDetail()) {
-                                    MediumCardView(image: Image(imageNames[index]), withOpacity: true, centeredTitle: imageNames[index])
+                                    MediumCardView(image: Image(destinations[index]), withOpacity: true, centeredTitle: destinations[index])
                                 }
                             }
                         }
@@ -47,8 +50,8 @@ struct HomeView: View {
                         .padding(.top, 32)
 
                     VStack(spacing: 15) {
-                        ForEach(0..<4) { index in
-                            SmallListItemView(image: Image(imageNames[index]))
+                        ForEach(Array(nearYou), id: \.0) { item in
+                            SmallListItemView(content: .init(imageString: item.0, title: item.1, distance: "2,8 km"))
                         }
                     }
                 }
