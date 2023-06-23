@@ -9,41 +9,38 @@ import SwiftUI
 
 struct SignUpView: View {
     @State private var isLoggedIn = false
-
+    
     var body: some View {
         if isLoggedIn {
             TabBarView()
-                .overlay(alignment: .top) {
-                    Color.clear
-                        .background(Color(hex: "F5F8F9"))
-                        .edgesIgnoringSafeArea(.top)
-                        .frame(height: 0)
-                }
         } else {
             signInContent()
         }
     }
-
+    
     func signInContent() -> some View {
         return ZStack {
             Color.white.ignoresSafeArea()
-
+            
             VStack(spacing: 20) {
-                Image("login")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .clipped()
-
                 Text("Registrar-se")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.top, 20)
+                    .padding(.vertical, 50)
                     .padding(.horizontal, 20)
-
-                Spacer(minLength: 40)
-
+                
+                Image("login")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxHeight: 300)
+                    .clipped()
+                
+                
+                
+                Spacer(minLength: 30)
+                
                 Button(action: {
                     isLoggedIn = true
                 }) {
@@ -52,7 +49,7 @@ struct SignUpView: View {
                             .resizable()
                             .frame(width: 24, height: 24)
                             .background(Color.black)
-
+                        
                         Text("Sign Up with Apple")
                             .font(.system(size: 20, weight: .medium))
                             .foregroundColor(.white)
@@ -62,7 +59,8 @@ struct SignUpView: View {
                     .background(Color.black)
                     .cornerRadius(10)
                 }
-
+                .buttonStyle(.bordered)
+                
                 HStack {
                     Text("Já possui conta? ")
                     Text("Entrar")
@@ -70,7 +68,7 @@ struct SignUpView: View {
                 }
                 .font(.system(size: 18))
                 .foregroundColor(.black)
-
+                
                 Spacer()
             }
         }

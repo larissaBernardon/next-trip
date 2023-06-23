@@ -168,6 +168,7 @@ struct HomeView: View {
                                 NavigationLink(destination: DestinationDetail(destination: destinations[index])) {
                                     MediumCardView(image: Image(destinationss[index]), withOpacity: true, centeredTitle: destinationss[index])
                                 }
+                                .navigationBarBackButtonHidden(true)
                             }
                         }
                     }
@@ -186,7 +187,10 @@ struct HomeView: View {
             }
             .padding(.horizontal, 16)
             .background(Color(hex: "F5F8F9"))
+            .navigationBarHidden(true)
         }
+        .navigationViewStyle(.stack)
+            .edgesIgnoringSafeArea(.top) //
     }
 }
 
