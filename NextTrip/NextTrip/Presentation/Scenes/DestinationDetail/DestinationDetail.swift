@@ -13,39 +13,97 @@ private enum CoordinateSpaces {
 
 struct DestinationDetail: View {
     let destination: Destination
+    @Environment(\.presentationMode) var presentationMode
+
+    init(destination: Destination) {
+        self.destination = destination
+
+        setupNavigationStyle()
+    }
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            ParallaxHeader(
-                coordinateSpace: CoordinateSpaces.scrollView,
-                defaultHeight: 300) {
-                Image(destination.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            }
+            VStack {
+                ParallaxHeader(
+                    coordinateSpace: CoordinateSpaces.scrollView,
+                    defaultHeight: 250
+                ) {
+                    ZStack {
+                        Image(destination.imageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
 
-            HStack(alignment: .center) {
-                VStack {
-                    Text("content text").padding()
-                    Text("content text").padding()
-                    Text("content text").padding()
-                    Text("content text").padding()
+                        Color.black.opacity(0.5)
+                        VStack(spacing: 5) {
+                            Text(destination.city)
+                                .font(.largeTitle)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                            HStack {
+                                Image(systemName: "mappin")
+                                    .font(.title2)
+                                    .foregroundColor(.white)
+
+                                Text(destination.country)
+                                    .font(.title2)
+                                    .foregroundColor(.white)
+                            }
+                        }
+                    }
                 }
-                .padding(10)
+
+                HStack(alignment: .center) {
+                    VStack {
+                        Text("content text").padding()
+                        Text("content text").padding()
+                        Text("content text").padding()
+                        Text("content text").padding()
+                    }
+                    .padding(10)
+                }
+                .frame(width: UIScreen.main.bounds.size.width)
+                .background(Color.white)
+                .cornerRadius(30)
+                .padding(.top, -40)
             }
-            .frame(width: UIScreen.main.bounds.size.width)
-            .background(Color.white)
-            .cornerRadius(30)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: customBackButton)
         }
+    }
+
+    var customBackButton: some View {
+        Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }) {
+            Image(systemName: "chevron.left")
+                .foregroundColor(.white)
+                .imageScale(.large)
+        }
+    }
+
+    private func setupNavigationStyle() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 }
 
 struct DestinationDetail_Previews: PreviewProvider {
     static var previews: some View {
-        DestinationDetail(destination: .init(city: "teste", country: "teste", bioSummary: "testeeeee", imageName: "Madrid", history: "", geography: "", language: "", currency: "", bestTimeToVisit: ""))
+        DestinationDetail(destination: .init(city: "Madrid", country: "Espanha", bioSummary: "testeeeee", imageName: "Madrid", history: "", geography: "", language: "", currency: "", bestTimeToVisit: ""))
     }
 }
 
+struct HeaderBottomView: View {
+    var body: some View {
+        Rectangle()
+            .fill(Color.pink)
+            .frame(width: UIScreen.main.bounds.width * 0.8, height: 50)
+    }
+}
 
 struct ParallaxHeader<Content: View, Space: Hashable>: View {
     let content: () -> Content

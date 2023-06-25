@@ -45,6 +45,6 @@ struct MediumCardView: View {
 
 struct MediumCardView_Previews: PreviewProvider {
     static var previews: some View {
-        MediumCardView(image: Image("rio"))
+        MediumCardView(image: Image("Madrid"), withOpacity: true)
     }
 }
