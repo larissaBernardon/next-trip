@@ -14,6 +14,7 @@ private enum CoordinateSpaces {
 struct DestinationDetail: View {
     let destination: Destination
     @Environment(\.presentationMode) var presentationMode
+    @State private var isButtonActive = false
 
     init(destination: Destination) {
         self.destination = destination
@@ -47,19 +48,60 @@ struct DestinationDetail: View {
                                 Text(destination.country)
                                     .font(.title2)
                                     .foregroundColor(.white)
+
+                                if let flag = getFlagEmoji(countryCode: destination.countryCode) {
+                                    Text(flag)
+                                        .font(.system(size: 32))
+                                }
                             }
                         }
                     }
                 }
 
                 HStack(alignment: .center) {
-                    VStack {
-                        Text("content text").padding()
-                        Text("content text").padding()
-                        Text("content text").padding()
-                        Text("content text").padding()
+                    VStack(alignment: .leading, spacing: 30) {
+                        Button(action: {
+                            isButtonActive.toggle()
+                        }) {
+                            Text(isButtonActive ? "Ver Planejamento" : "Planejar Viagem")
+                                .font(.headline)
+                                .foregroundColor(isButtonActive ? .black : .white)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(isButtonActive ? Color.white : Color.black)
+                                .cornerRadius(10)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.black, lineWidth: 1)
+                                )
+                        }
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Sobre:")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                            Text(destination.bioSummary).foregroundColor(Color(red: 0.45, green: 0.45, blue: 0.45))
+                            Divider().background(Color.gray).padding(.vertical, 10)
+                        }
+
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("História")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+
+                            Text(destination.history).foregroundColor(Color(red: 0.45, green: 0.45, blue: 0.45))
+                            Divider().background(Color.gray).padding(.vertical, 10)
+                        }
+
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Geografia:")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                            Text(destination.geography).foregroundColor(Color(red: 0.45, green: 0.45, blue: 0.45))
+                            Divider().background(Color.gray).padding(.vertical, 10)
+                        }
+
                     }
-                    .padding(10)
+                    .padding(20)
                 }
                 .frame(width: UIScreen.main.bounds.size.width)
                 .background(Color.white)
@@ -89,11 +131,36 @@ struct DestinationDetail: View {
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
+
+
+    private func getFlagEmoji(countryCode: String) -> String? {
+        let base: UInt32 = 127397
+        var flagString = ""
+
+        countryCode.uppercased().unicodeScalars.forEach {
+            if let scalar = UnicodeScalar(base + $0.value) {
+                flagString.append(String(scalar))
+            }
+        }
+
+        return flagString.isEmpty ? nil : flagString
+    }
 }
 
 struct DestinationDetail_Previews: PreviewProvider {
     static var previews: some View {
-        DestinationDetail(destination: .init(city: "Madrid", country: "Espanha", bioSummary: "testeeeee", imageName: "Madrid", history: "", geography: "", language: "", currency: "", bestTimeToVisit: ""))
+        DestinationDetail(destination: Destination(
+            city: "Madrid",
+            country: "Espanha",
+            countryCode: "ES",
+            bioSummary: "Madri, a capital da Espanha, é uma cidade vibrante conhecida por sua rica história, arte e atmosfera animada.",
+            imageName: "Madrid",
+            history: "Madrid possui uma história fascinante que remonta séculos. Foi influenciada por várias culturas e civilizações ao longo do tempo.",
+            geography: "Madri está localizada no centro da Espanha, cercada por montanhas. A cidade é conhecida por sua bela arquitetura, espaçosos parques e amplas avenidas.",
+            language: "Espanhol",
+            currency: "Euro (€)",
+            bestTimeToVisit: "A primavera (abril a junho) e o outono (setembro a novembro) são considerados os melhores momentos para visitar Madri devido ao clima agradável e aos eventos culturais."
+        ))
     }
 }
 

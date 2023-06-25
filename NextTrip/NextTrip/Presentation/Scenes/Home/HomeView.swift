@@ -14,9 +14,10 @@ struct HomeView: View {
         Destination(
             city: "Madrid",
             country: "Espanha",
+            countryCode: "ES",
             bioSummary: "Madri, a capital da Espanha, é uma cidade vibrante conhecida por sua rica história, arte e atmosfera animada.",
             imageName: "Madrid",
-            history: "Madri possui uma história fascinante que remonta séculos. Foi influenciada por várias culturas e civilizações ao longo do tempo.",
+            history: "Madrid possui uma história fascinante que remonta séculos. Foi influenciada por várias culturas e civilizações ao longo do tempo.",
             geography: "Madri está localizada no centro da Espanha, cercada por montanhas. A cidade é conhecida por sua bela arquitetura, espaçosos parques e amplas avenidas.",
             language: "Espanhol",
             currency: "Euro (€)",
@@ -25,6 +26,7 @@ struct HomeView: View {
         Destination(
             city: "Rio de Janeiro",
             country: "Brasil",
+            countryCode: "BR",
             bioSummary: "Rio de Janeiro é uma cidade vibrante conhecida por suas deslumbrantes praias, animado festival de Carnaval e marcos icônicos como o Cristo Redentor.",
             imageName: "Rio de Janeiro",
             history: "Rio de Janeiro possui uma rica história que remonta ao século XVI, quando foi fundada pelos portugueses. Foi a capital do Brasil até 1960.",
@@ -36,6 +38,7 @@ struct HomeView: View {
         Destination(
             city: "Lugano",
             country: "Suíça",
+            countryCode: "CH",
             bioSummary: "Lugano é uma cidade pitoresca localizada no sul da Suíça, conhecida por sua bela localização à beira do lago, charmoso centro histórico e atrações culturais.",
             imageName: "Lugano",
             history: "Lugano possui uma rica história que remonta à época romana. A cidade foi influenciada tanto pela cultura italiana quanto pela suíça ao longo dos séculos.",
@@ -47,6 +50,7 @@ struct HomeView: View {
         Destination(
             city: "Cusco",
             country: "Peru",
+            countryCode: "PE",
             bioSummary: "Cusco é uma cidade histórica localizada no coração dos Andes peruanos, conhecida como o ponto de partida para explorar a antiga cidade de Machu Picchu.",
             imageName: "Cusco",
             history: "Cusco foi a capital do Império Inca e possui uma rica história que remonta a milhares de anos. A cidade ainda preserva muitos vestígios da cultura inca.",
@@ -58,6 +62,7 @@ struct HomeView: View {
         Destination(
             city: "Sydney",
             country: "Austrália",
+            countryCode: "AU",
             bioSummary: "Sydney é uma cidade cosmopolita e vibrante, conhecida por suas praias deslumbrantes, estilo de vida descontraído e icônicos pontos turísticos.",
             imageName: "Sydney",
             history: "Sydney tem uma história rica que remonta aos povos aborígenes. Foi colonizada pelos britânicos em 1788 e se tornou uma importante cidade portuária.",
@@ -70,6 +75,7 @@ struct HomeView: View {
         Destination(
             city: "Nova Iorque",
             country: "Estados Unidos",
+            countryCode: "US",
             bioSummary: "Nova Iorque é uma cidade icônica e vibrante, conhecida como o centro financeiro, cultural e artístico dos Estados Unidos.",
             imageName: "NovaIorque",
             history: "Nova Iorque tem uma história rica e diversificada, influenciada por imigrantes de todo o mundo. É conhecida por seus marcos famosos e como um centro de oportunidades.",
@@ -81,7 +87,8 @@ struct HomeView: View {
 
         Destination(
             city: "Patagônia",
-            country: "Argentina e Chile",
+            country: "Argentina",
+            countryCode: "AR",
             bioSummary: "A Patagônia é uma região deslumbrante conhecida por sua paisagem natural intocada, que inclui montanhas majestosas, geleiras impressionantes e lagos cristalinos.",
             imageName: "Patagonia",
             history: "A Patagônia tem uma história rica que remonta aos povos indígenas que habitavam a região antes da chegada dos europeus. Foi explorada e colonizada por diferentes expedições ao longo do tempo.",
@@ -93,6 +100,7 @@ struct HomeView: View {
         Destination(
             city: "Fernando de Noronha",
             country: "Brasil",
+            countryCode: "BRA",
             bioSummary: "Fernando de Noronha é um paraíso tropical conhecido por suas praias deslumbrantes, águas cristalinas e rica vida marinha.",
             imageName: "Fernando de Noronha",
             history: "Fernando de Noronha tem uma história fascinante que remonta aos tempos coloniais. Foi descoberta pelos portugueses e já foi um local estratégico para defesa e comércio.",
@@ -105,6 +113,7 @@ struct HomeView: View {
         Destination(
             city: "Istambul",
             country: "Turquia",
+            countryCode: "TR",
             bioSummary: "Istambul é uma cidade mágica que une os continentes europeu e asiático, conhecida por sua rica história, arquitetura deslumbrante e cultura vibrante.",
             imageName: "Istambul",
             history: "Istambul tem uma história milenar que remonta à época da antiga Bizâncio e Constantinopla. Foi a capital de três grandes impérios: Romano, Bizantino e Otomano.",
@@ -116,6 +125,7 @@ struct HomeView: View {
         Destination(
             city: "Paris",
             country: "França",
+            countryCode: "FR",
             bioSummary: "Paris é uma cidade icônica e romântica, conhecida por sua arquitetura deslumbrante, museus de renome mundial e culinária requintada.",
             imageName: "Paris",
             history: "Paris tem uma história fascinante que remonta à época romana. Ao longo dos séculos, a cidade se tornou um centro de arte, cultura e política.",
@@ -128,6 +138,7 @@ struct HomeView: View {
         Destination(
             city: "Londres",
             country: "Reino Unido",
+            countryCode: "GB",
             bioSummary: "Londres é uma cidade icônica e cosmopolita, conhecida por sua história fascinante, cultura diversificada e uma infinidade de atrações famosas.",
             imageName: "Londres",
             history: "Londres tem uma história rica que remonta à época romana. Ao longo dos séculos, foi um importante centro político, cultural e financeiro do mundo.",
@@ -164,7 +175,7 @@ struct HomeView: View {
 
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            ForEach(0..<10) { index in
+                            ForEach(0..<11) { index in
                                 NavigationLink(destination: DestinationDetail(destination: destinations[index])) {
                                     MediumCardView(image: Image(destinationss[index]), withOpacity: true, centeredTitle: destinationss[index])
                                 }
@@ -204,6 +215,7 @@ struct HomeView_Previews: PreviewProvider {
 struct Destination: Codable {
     let city: String
     let country: String
+    let countryCode: String
     let bioSummary: String
     let imageName: String
     let history: String
