@@ -12,9 +12,11 @@ private enum CoordinateSpaces {
 }
 
 struct DestinationDetail: View {
-    let destination: Destination
+
     @Environment(\.presentationMode) var presentationMode
     @State private var isButtonActive = false
+    @State private var showPlanningScreen = false
+    let destination: Destination
 
     init(destination: Destination) {
         self.destination = destination
@@ -61,7 +63,7 @@ struct DestinationDetail: View {
                 HStack(alignment: .center) {
                     VStack(alignment: .leading, spacing: 30) {
                         Button(action: {
-                            isButtonActive.toggle()
+                            showPlanningScreen = true
                         }) {
                             Text(isButtonActive ? "Ver Planejamento" : "Planejar Viagem")
                                 .font(.headline)
@@ -75,6 +77,15 @@ struct DestinationDetail: View {
                                         .stroke(Color.black, lineWidth: 1)
                                 )
                         }
+                        .sheet(isPresented: $showPlanningScreen) {
+                            PlanningTripView(isPresented: $showPlanningScreen,
+                                             destination: "\(destination.city), \(destination.country)"
+                            )
+                            .onDisappear {
+                                isButtonActive.toggle()
+                            }
+                        }
+
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Sobre:")
                                 .font(.title3)
