@@ -9,10 +9,20 @@ import SwiftUI
 
 struct PlanningTripView: View {
 
-    @State private var date = Date()
+    @State private var dates: Set<DateComponents> = []
+    @State private var startDate: Date?
+    @State private var endDate: Date?
+    @State private var dateSelectionState: DateSelectionState = .none
+
     @Binding var isPresented: Bool
 
     let destination: String
+
+    enum DateSelectionState {
+        case none
+        case startSelected
+        case endSelected
+    }
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -28,30 +38,71 @@ struct PlanningTripView: View {
 
             Spacer()
 
-            DatePicker(
-                    "Data inicial",
-                    selection: $date,
-                    displayedComponents: [.date]
-                )
-                .datePickerStyle(.graphical)
-                .accentColor(.black)
-                .padding(.horizontal, 20)
+            if #available(iOS 16.0, *) {
+                MultiDatePicker("Dates Available", selection: $dates, in: Date()...)
+                    .datePickerStyle(.graphical)
+                    .padding()
+                    .tint(.black)
+                    .foregroundColor(.green)
+                    .accentColor(.yellow)
+                    .onChange(of: dates, perform: { value in
+                        print("VALUE: \(value)")
+                        processDateSelection()
+                    })
+
+
+            } else {
+                // Fallback on earlier versions
+            }
 
             Spacer()
 
             Button(action: {
+                // request para gerar itnerário
+                // dismiss no sucesso
+                print(startDate)
+                print(endDate)
                 isPresented = false
             }) {
-                Text("Done")
+                Text("Gerar itnerário")
                     .foregroundColor(.white)
                     .font(.headline)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.black)
+                    .background(dates.count < 2 ? Color.gray : Color.black)
                     .cornerRadius(10)
             }
+            .disabled(dates.count < 2)
             .padding()
         }
+    }
+
+    private func processDateSelection() {
+        guard let lastDateComponent = dates.sorted(by: { $0.date ?? Date.distantPast < $1.date ?? Date.distantPast }).last,
+            let selectedDate = lastDateComponent.date else { return }
+
+
+        guard dates.count < 3 else {
+            clearDates()
+            return
+        }
+
+        if let startDate = startDate {
+            if selectedDate > startDate {
+                endDate = selectedDate
+            } else {
+                clearDates()
+                return
+            }
+        } else {
+            startDate = selectedDate
+        }
+    }
+
+    private func clearDates() {
+        dates.removeAll()
+        startDate = nil
+        endDate = nil
     }
 }
 
@@ -78,15 +129,9 @@ struct DestinationTextField: View {
                 .stroke(Color.gray, lineWidth: 1)
         )
         .padding(.horizontal)
-        .onTapGesture {}
-        .onLongPressGesture {}
-        .textContentType(.none)
         .autocapitalization(.none)
-        .disableAutocorrection(true)
-        .textContentType(.oneTimeCode)
-        .keyboardType(.default)
         .textContentType(.name)
-        .autocapitalization(.words)
-        .disableAutocorrection(true)
     }
 }
+
+

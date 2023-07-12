@@ -14,12 +14,6 @@ struct ActiveTripsPage: View {
                 MediumCardView(image: Image("Rio de Janeiro"), width: UIScreen.main.bounds.width * 0.90, withOpacity: true, centeredTitle: "Rio de Janeiro")
                     .padding(.horizontal)
                     .cornerRadius(20)
-                Spacer(minLength: 30)
-                Text("Itinerário")
-                    .padding(.horizontal)
-                    .font(.title2)
-                    .foregroundColor(.darkGray)
-                ItineraryView()
             }
         }
         .padding(.top)

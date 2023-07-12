@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Main: App {
+    @StateObject private var state = DestinationDetailState()
+
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            SplashView().environmentObject(state)
         }
     }
 }

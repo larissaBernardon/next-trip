@@ -7,15 +7,21 @@
 
 import SwiftUI
 
+class DestinationDetailState: ObservableObject {
+    @Published var isButtonEnabled = true
+    @Published var shouldNavigateToTrips = false
+}
+
 private enum CoordinateSpaces {
     case scrollView
 }
 
 struct DestinationDetail: View {
 
+    @EnvironmentObject private var state: DestinationDetailState
     @Environment(\.presentationMode) var presentationMode
-    @State private var isButtonActive = false
     @State private var showPlanningScreen = false
+
     let destination: Destination
 
     init(destination: Destination) {
@@ -38,7 +44,7 @@ struct DestinationDetail: View {
 
                         Color.black.opacity(0.5)
                         VStack(spacing: 5) {
-                            Text(destination.city)
+                            Text(destination.name)
                                 .font(.largeTitle)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
@@ -65,12 +71,12 @@ struct DestinationDetail: View {
                         Button(action: {
                             showPlanningScreen = true
                         }) {
-                            Text(isButtonActive ? "Ver Planejamento" : "Planejar Viagem")
+                            Text(state.isButtonEnabled ? "Planejar Viagem" : "Ver Planejamento")
                                 .font(.headline)
-                                .foregroundColor(isButtonActive ? .black : .white)
+                                .foregroundColor(state.isButtonEnabled ? .white : .black)
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(isButtonActive ? Color.white : Color.black)
+                                .background(state.isButtonEnabled ? Color.black : Color.white)
                                 .cornerRadius(10)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)
@@ -79,10 +85,11 @@ struct DestinationDetail: View {
                         }
                         .sheet(isPresented: $showPlanningScreen) {
                             PlanningTripView(isPresented: $showPlanningScreen,
-                                             destination: "\(destination.city), \(destination.country)"
+                                             destination: "\(destination.name), \(destination.country)"
                             )
                             .onDisappear {
-                                isButtonActive.toggle()
+                                state.isButtonEnabled.toggle()
+                                state.shouldNavigateToTrips = true
                             }
                         }
 
@@ -161,7 +168,7 @@ struct DestinationDetail: View {
 struct DestinationDetail_Previews: PreviewProvider {
     static var previews: some View {
         DestinationDetail(destination: Destination(
-            city: "Madrid",
+            name: "Madrid",
             country: "Espanha",
             countryCode: "ES",
             bioSummary: "Madri, a capital da Espanha, é uma cidade vibrante conhecida por sua rica história, arte e atmosfera animada.",

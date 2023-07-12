@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
+    @EnvironmentObject private var appState: DestinationDetailState
     @State private var selectedTab = 0
 
     var body: some View {
@@ -34,6 +35,12 @@ struct TabBarView: View {
                 .tag(2)
         }
         .accentColor(Color(hex: "222222"))
+        .onChange(of: appState.shouldNavigateToTrips) { shouldNavigateToTrips in
+            if shouldNavigateToTrips {
+                selectedTab = 1
+                appState.shouldNavigateToTrips = false
+            }
+        }
     }
 }
 

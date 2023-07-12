@@ -12,7 +12,7 @@ struct HomeView: View {
 
     let destinations: [Destination] = [
         Destination(
-            city: "Madrid",
+            name: "Madrid",
             country: "Espanha",
             countryCode: "ES",
             bioSummary: "Madri, a capital da Espanha, é uma cidade vibrante conhecida por sua rica história, arte e atmosfera animada.",
@@ -24,7 +24,7 @@ struct HomeView: View {
             bestTimeToVisit: "A primavera (abril a junho) e o outono (setembro a novembro) são considerados os melhores momentos para visitar Madri devido ao clima agradável e aos eventos culturais."
         ),
         Destination(
-            city: "Rio de Janeiro",
+            name: "Rio de Janeiro",
             country: "Brasil",
             countryCode: "BR",
             bioSummary: "Rio de Janeiro é uma cidade vibrante conhecida por suas deslumbrantes praias, animado festival de Carnaval e marcos icônicos como o Cristo Redentor.",
@@ -36,7 +36,7 @@ struct HomeView: View {
             bestTimeToVisit: "O melhor momento para visitar o Rio de Janeiro é durante os meses de verão (dezembro a março), quando o clima está quente e ocorrem eventos festivos."
         ),
         Destination(
-            city: "Lugano",
+            name: "Lugano",
             country: "Suíça",
             countryCode: "CH",
             bioSummary: "Lugano é uma cidade pitoresca localizada no sul da Suíça, conhecida por sua bela localização à beira do lago, charmoso centro histórico e atrações culturais.",
@@ -48,7 +48,7 @@ struct HomeView: View {
             bestTimeToVisit: "O melhor momento para visitar Lugano é durante a primavera (abril a junho) e o verão (junho a setembro), quando o clima está agradável e há uma série de festivais e eventos acontecendo."
         ),
         Destination(
-            city: "Cusco",
+            name: "Cusco",
             country: "Peru",
             countryCode: "PE",
             bioSummary: "Cusco é uma cidade histórica localizada no coração dos Andes peruanos, conhecida como o ponto de partida para explorar a antiga cidade de Machu Picchu.",
@@ -60,7 +60,7 @@ struct HomeView: View {
             bestTimeToVisit: "A melhor época para visitar Cusco e Machu Picchu é durante a estação seca, que vai de maio a setembro. Essa época oferece clima estável e menos chuvas."
         ),
         Destination(
-            city: "Sydney",
+            name: "Sydney",
             country: "Austrália",
             countryCode: "AU",
             bioSummary: "Sydney é uma cidade cosmopolita e vibrante, conhecida por suas praias deslumbrantes, estilo de vida descontraído e icônicos pontos turísticos.",
@@ -73,7 +73,7 @@ struct HomeView: View {
         ),
 
         Destination(
-            city: "Nova Iorque",
+            name: "Nova Iorque",
             country: "Estados Unidos",
             countryCode: "US",
             bioSummary: "Nova Iorque é uma cidade icônica e vibrante, conhecida como o centro financeiro, cultural e artístico dos Estados Unidos.",
@@ -86,7 +86,7 @@ struct HomeView: View {
         ),
 
         Destination(
-            city: "Patagônia",
+            name: "Patagônia",
             country: "Argentina",
             countryCode: "AR",
             bioSummary: "A Patagônia é uma região deslumbrante conhecida por sua paisagem natural intocada, que inclui montanhas majestosas, geleiras impressionantes e lagos cristalinos.",
@@ -98,7 +98,7 @@ struct HomeView: View {
             bestTimeToVisit: "A melhor época para visitar a Patagônia é durante os meses de verão (dezembro a fevereiro), quando as condições climáticas são mais amenas e as atividades ao ar livre estão disponíveis."
         ),
         Destination(
-            city: "Fernando de Noronha",
+            name: "Fernando de Noronha",
             country: "Brasil",
             countryCode: "BRA",
             bioSummary: "Fernando de Noronha é um paraíso tropical conhecido por suas praias deslumbrantes, águas cristalinas e rica vida marinha.",
@@ -111,7 +111,7 @@ struct HomeView: View {
         ),
 
         Destination(
-            city: "Istambul",
+            name: "Istambul",
             country: "Turquia",
             countryCode: "TR",
             bioSummary: "Istambul é uma cidade mágica que une os continentes europeu e asiático, conhecida por sua rica história, arquitetura deslumbrante e cultura vibrante.",
@@ -123,7 +123,7 @@ struct HomeView: View {
             bestTimeToVisit: "A melhor época para visitar Istambul é durante a primavera (abril a junho) e o outono (setembro a novembro), quando o clima é ameno e as multidões de turistas são menores."
         ),
         Destination(
-            city: "Paris",
+            name: "Paris",
             country: "França",
             countryCode: "FR",
             bioSummary: "Paris é uma cidade icônica e romântica, conhecida por sua arquitetura deslumbrante, museus de renome mundial e culinária requintada.",
@@ -136,7 +136,7 @@ struct HomeView: View {
         ),
 
         Destination(
-            city: "Londres",
+            name: "Londres",
             country: "Reino Unido",
             countryCode: "GB",
             bioSummary: "Londres é uma cidade icônica e cosmopolita, conhecida por sua história fascinante, cultura diversificada e uma infinidade de atrações famosas.",
@@ -209,18 +209,4 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }
-}
-
-
-struct Destination: Codable {
-    let city: String
-    let country: String
-    let countryCode: String
-    let bioSummary: String
-    let imageName: String
-    let history: String
-    let geography: String
-    let language: String
-    let currency: String
-    let bestTimeToVisit: String
 }
