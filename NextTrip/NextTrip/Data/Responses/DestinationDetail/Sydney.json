@@ -1,0 +1,19 @@
+//
+//  Sydney.json
+//  NextTrip
+//
+//  Created by larissa.bernardon on 12/07/23.
+//
+
+{
+    "name": "Sydney",
+    "country": "Austrália",
+    "countryCode": "AU",
+    "bioSummary": "Sydney é uma cidade vibrante e cosmopolita localizada na costa leste da Austrália. Com suas praias deslumbrantes, ícones famosos e uma cena cultural diversificada, Sydney é um destino popular para turistas de todo o mundo.",
+    "imageName": "sydney_image",
+    "history": "Sydney possui uma história fascinante que remonta aos povos aborígenes que habitavam a região há milhares de anos. A cidade foi colonizada pelos britânicos em 1788 e se tornou um importante centro comercial e cultural.",
+    "geography": "Sydney está situada em uma bela baía, com um porto natural que é uma das maravilhas naturais do mundo. A cidade é cercada por praias deslumbrantes, parques nacionais e uma paisagem costeira impressionante.",
+    "language": "Inglês",
+    "currency": "Dólar Australiano",
+    "bestTimeToVisit": "A melhor época para visitar Sydney é durante os meses de outubro a abril, quando o clima é mais quente e as atividades ao ar livre são mais agradáveis."
+}

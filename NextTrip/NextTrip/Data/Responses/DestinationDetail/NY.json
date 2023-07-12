@@ -1,0 +1,19 @@
+//
+//  NY.json
+//  NextTrip
+//
+//  Created by larissa.bernardon on 12/07/23.
+//
+
+{
+    "name": "Nova York",
+    "country": "Estados Unidos",
+    "countryCode": "US",
+    "bioSummary": "Nova York é a cidade que nunca dorme. Conhecida por seus arranha-céus imponentes, diversidade cultural e vibrante cena artística, Nova York é um destino icônico para turistas de todo o mundo.",
+    "imageName": "nova_york_image",
+    "history": "A história de Nova York remonta aos primeiros assentamentos europeus na América do Norte. Ao longo dos séculos, a cidade se tornou um importante centro financeiro, cultural e político.",
+    "geography": "Localizada no nordeste dos Estados Unidos, Nova York é composta por cinco distritos: Manhattan, Brooklyn, Queens, Bronx e Staten Island. A cidade é banhada pelo rio Hudson e possui uma localização estratégica na costa leste do país.",
+    "language": "Inglês",
+    "currency": "Dólar americano",
+    "bestTimeToVisit": "A primavera e o outono são as melhores épocas para visitar Nova York, quando o clima é ameno e as ruas ganham vida com festivais e eventos culturais."
+}

@@ -1,0 +1,19 @@
+//
+//  Rio.json
+//  NextTrip
+//
+//  Created by larissa.bernardon on 12/07/23.
+//
+
+{
+    "name": "Rio de Janeiro",
+    "country": "Brasil",
+    "countryCode": "BR",
+    "bioSummary": "O Rio de Janeiro é uma cidade maravilhosa, famosa por suas belas praias, paisagens deslumbrantes e cultura vibrante. Conhecida como a Cidade Maravilhosa, o Rio de Janeiro é um destino turístico popular no Brasil e no mundo.",
+    "imageName": "rio_de_janeiro_image",
+    "history": "O Rio de Janeiro tem uma história fascinante que remonta à época do descobrimento do Brasil. Foi a capital do país por muitos anos e já sediou eventos importantes, como a Copa do Mundo e os Jogos Olímpicos.",
+    "geography": "Localizado na região sudeste do Brasil, o Rio de Janeiro possui uma geografia única, com montanhas, florestas tropicais e praias paradisíacas. A cidade é famosa pelo seu famoso cartão-postal, o Pão de Açúcar, e pelo icônico Cristo Redentor.",
+    "language": "Português",
+    "currency": "Real",
+    "bestTimeToVisit": "O Rio de Janeiro é um destino agradável durante todo o ano, mas os meses de dezembro a março são os mais procurados devido ao verão e às festas tradicionais, como o Carnaval."
+}

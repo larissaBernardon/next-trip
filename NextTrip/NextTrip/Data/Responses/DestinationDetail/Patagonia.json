@@ -1,0 +1,19 @@
+//
+//  Patagonia.json
+//  NextTrip
+//
+//  Created by larissa.bernardon on 12/07/23.
+//
+
+{
+    "name": "Patagônia",
+    "country": "Argentina",
+    "countryCode": "AR",
+    "bioSummary": "A Patagônia é uma região de natureza intocada e paisagens deslumbrantes. Com suas montanhas imponentes, geleiras majestosas e vastas planícies, a Patagônia é um verdadeiro paraíso para os amantes do ecoturismo e da aventura.",
+    "imageName": "patagonia_image",
+    "history": "A história da Patagônia remonta a milhares de anos, quando era habitada por povos indígenas. Durante a colonização europeia, a região foi explorada por exploradores e navegadores em busca de rotas comerciais.",
+    "geography": "A Patagônia abrange uma extensa área no sul da Argentina e do Chile. A região é conhecida por sua geografia diversificada, incluindo montanhas, lagos, fiordes e vastas estepes.",
+    "language": "Espanhol",
+    "currency": "Peso argentino e Peso chileno",
+    "bestTimeToVisit": "A melhor época para visitar a Patagônia é durante os meses de verão, de novembro a março, quando as temperaturas são mais amenas e as atividades ao ar livre estão disponíveis."
+}

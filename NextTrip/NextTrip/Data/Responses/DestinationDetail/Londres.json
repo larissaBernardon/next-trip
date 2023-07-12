@@ -1,0 +1,19 @@
+//
+//  Londres.json
+//  NextTrip
+//
+//  Created by larissa.bernardon on 12/07/23.
+//
+
+{
+    "name": "Londres",
+    "country": "Reino Unido",
+    "countryCode": "GB",
+    "bioSummary": "Londres é uma cidade cosmopolita e vibrante, conhecida por sua rica história, cultura diversificada e marcos emblemáticos. Com seus palácios majestosos, museus renomados e atmosfera animada, Londres é um destino imperdível para os viajantes.",
+    "imageName": "london_image",
+    "history": "A história de Londres remonta aos tempos romanos, quando a cidade foi fundada como uma fortaleza. Ao longo dos séculos, Londres se tornou uma das cidades mais influentes do mundo, desempenhando um papel importante em eventos históricos e culturais.",
+    "geography": "Londres está localizada no sudeste da Inglaterra, às margens do rio Tâmisa. A cidade é composta por diversos bairros distintos, cada um com sua própria personalidade e atrações únicas.",
+    "language": "Inglês",
+    "currency": "Libra esterlina",
+    "bestTimeToVisit": "A melhor época para visitar Londres é durante a primavera (abril a junho) e o outono (setembro a novembro), quando o clima é ameno e a cidade está repleta de eventos culturais e festivais."
+}

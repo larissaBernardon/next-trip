@@ -1,0 +1,19 @@
+//
+//  Istambul.json
+//  NextTrip
+//
+//  Created by larissa.bernardon on 12/07/23.
+//
+
+{
+    "name": "Istambul",
+    "country": "Turquia",
+    "countryCode": "TR",
+    "bioSummary": "Istambul é uma cidade que conecta a Europa e a Ásia, oferecendo uma mistura única de culturas, história e arquitetura. Com seus palácios opulentos, mesquitas magníficas e mercados vibrantes, Istambul é uma verdadeira experiência para os visitantes.",
+    "imageName": "istambul_image",
+    "history": "Istambul tem uma história rica que remonta a milênios. A cidade já foi a capital do Império Bizantino e do Império Otomano, testemunhando grandes eventos e influências culturais ao longo dos séculos.",
+    "geography": "Istambul está situada entre os continentes europeu e asiático, dividida pelo Estreito de Bósforo. A cidade abriga vários pontos turísticos icônicos, como a Basílica de Santa Sofia, a Mesquita Azul e o Palácio de Topkapi.",
+    "language": "Turco",
+    "currency": "Lira turca",
+    "bestTimeToVisit": "A melhor época para visitar Istambul é durante a primavera e o outono, quando o clima é ameno e a cidade não está tão cheia de turistas. Evite os meses de verão, que podem ser bastante quentes."
+}

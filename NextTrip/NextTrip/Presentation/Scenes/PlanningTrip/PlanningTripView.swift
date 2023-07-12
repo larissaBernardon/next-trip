@@ -13,10 +13,12 @@ struct PlanningTripView: View {
     @State private var startDate: Date?
     @State private var endDate: Date?
     @State private var dateSelectionState: DateSelectionState = .none
+    @State private var selectedPreferences: Set<String> = []
 
     @Binding var isPresented: Bool
 
     let destination: String
+    let options = ["Cultura", "Natureza", "Economica", "Luxo", "Experiências gastronomicas", "Esportes"]
 
     enum DateSelectionState {
         case none
@@ -29,24 +31,49 @@ struct PlanningTripView: View {
             Text("Selecionar datas")
                 .font(.title)
                 .fontWeight(.semibold)
-                .padding(.top, 30)
+                .padding(.top, 20)
                 .padding(.leading, 20)
-
-            Spacer()
-
+            
             DestinationTextField(destinationName: destination)
 
-            Spacer()
+            Text("Preferências da viagem")
+                .font(.system(size: 17, weight: .bold))
+                .fontWeight(.semibold)
+                .padding(.leading)
+                .padding(.top, 20)
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    ForEach(options, id: \.self) { option in
+                        Button(action: {
+                            toggleOption(option)
+                        }) {
+                            Text(option)
+                                .font(.system(size: 14))
+                                .foregroundColor(selectedPreferences.contains(option) ? .white : .black)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 8)
+                                .background(selectedPreferences.contains(option) ? Color.black : Color.white)
+                                .cornerRadius(20)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .stroke(Color.black, lineWidth: selectedPreferences.contains(option) ? 0 : 1)
+                                )
+                        }
+                    }
+                }
+                .padding(.vertical, 5)
+            }
+            .padding(.leading, 17)
 
             if #available(iOS 16.0, *) {
                 MultiDatePicker("Dates Available", selection: $dates, in: Date()...)
                     .datePickerStyle(.graphical)
-                    .padding()
+                    .padding(.horizontal)
                     .tint(.black)
                     .foregroundColor(.green)
                     .accentColor(.yellow)
                     .onChange(of: dates, perform: { value in
-                        print("VALUE: \(value)")
                         processDateSelection()
                     })
 
@@ -55,11 +82,11 @@ struct PlanningTripView: View {
                 // Fallback on earlier versions
             }
 
-            Spacer()
-
             Button(action: {
-                // request para gerar itnerário
-                // dismiss no sucesso
+                // montar objeto
+                // salvar local
+                // mostrar loading
+                // dar dismiss após
                 print(startDate)
                 print(endDate)
                 isPresented = false
@@ -79,7 +106,7 @@ struct PlanningTripView: View {
 
     private func processDateSelection() {
         guard let lastDateComponent = dates.sorted(by: { $0.date ?? Date.distantPast < $1.date ?? Date.distantPast }).last,
-            let selectedDate = lastDateComponent.date else { return }
+              let selectedDate = lastDateComponent.date else { return }
 
 
         guard dates.count < 3 else {
@@ -103,6 +130,14 @@ struct PlanningTripView: View {
         dates.removeAll()
         startDate = nil
         endDate = nil
+    }
+
+    func toggleOption(_ option: String) {
+        if selectedPreferences.contains(option) {
+            selectedPreferences.remove(option)
+        } else {
+            selectedPreferences.insert(option)
+        }
     }
 }
 

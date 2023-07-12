@@ -1,0 +1,19 @@
+//
+//  Cusco.json
+//  NextTrip
+//
+//  Created by larissa.bernardon on 12/07/23.
+//
+
+{
+    "name": "Cusco",
+    "country": "Peru",
+    "countryCode": "PE",
+    "bioSummary": "Cusco é uma cidade histórica localizada no Peru, conhecida por ser a antiga capital do Império Inca. Com suas ruínas impressionantes, cultura rica e paisagens deslumbrantes, Cusco é um destino imperdível para os amantes da história e da aventura.",
+    "imageName": "cusco_image",
+    "history": "Cusco foi o centro do Império Inca e preserva muitos vestígios de sua grandiosa civilização. A cidade tem uma história fascinante, que combina elementos pré-colombianos e coloniais.",
+    "geography": "Cusco está localizada na região dos Andes, a uma altitude elevada. A paisagem é dominada por montanhas imponentes, vales profundos e rios sinuosos.",
+    "language": "Espanhol",
+    "currency": "Sol",
+    "bestTimeToVisit": "A melhor época para visitar Cusco é durante os meses de maio a setembro, quando o clima é mais seco e as temperaturas são mais amenas."
+}

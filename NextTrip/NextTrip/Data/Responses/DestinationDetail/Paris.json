@@ -1,0 +1,19 @@
+//
+//  Paris.json
+//  NextTrip
+//
+//  Created by larissa.bernardon on 12/07/23.
+//
+
+{
+    "name": "Paris",
+    "country": "França",
+    "countryCode": "FR",
+    "bioSummary": "Paris é conhecida como a Cidade Luz, famosa por sua beleza, cultura refinada e gastronomia requintada. Com seus icônicos pontos turísticos, como a Torre Eiffel, o Louvre e a Catedral de Notre-Dame, Paris encanta os visitantes com seu charme romântico.",
+    "imageName": "paris_image",
+    "history": "A história de Paris remonta a mais de 2.000 anos, quando foi fundada pelos romanos. A cidade desempenhou um papel fundamental em eventos históricos, como a Revolução Francesa e as duas guerras mundiais.",
+    "geography": "Paris está localizada no norte da França, às margens do rio Sena. A cidade é dividida em 20 arrondissements, cada um com sua própria atmosfera e atrações.",
+    "language": "Francês",
+    "currency": "Euro",
+    "bestTimeToVisit": "A melhor época para visitar Paris é na primavera (abril a junho) e no outono (setembro a outubro), quando o clima é agradável e a cidade está menos lotada de turistas."
+}

@@ -1,0 +1,19 @@
+//
+//  Madrid.json
+//  NextTrip
+//
+//  Created by larissa.bernardon on 12/07/23.
+//
+
+{
+    "name": "Madri",
+    "country": "Espanha",
+    "countryCode": "ES",
+    "bioSummary": "Madri é a capital da Espanha e uma das cidades mais vibrantes e cosmopolitas da Europa. Com uma rica história, arquitetura deslumbrante e uma cena cultural diversificada, Madri oferece uma experiência única para os visitantes.",
+    "imageName": "madri_image",
+    "history": "Madri possui uma rica história que remonta à Idade Média. A cidade já foi o centro político e cultural do império espanhol e testemunhou eventos históricos importantes ao longo dos séculos.",
+    "geography": "Localizada no centro da Espanha, Madri está situada em uma planície elevada no coração do país. A cidade é cercada por montanhas e possui um clima mediterrâneo continental, com verões quentes e invernos suaves.",
+    "language": "Espanhol",
+    "currency": "Euro",
+    "bestTimeToVisit": "A primavera e o outono são as melhores estações para visitar Madri, quando o clima está ameno e a cidade ganha vida com festivais, eventos culturais e atividades ao ar livre."
+}

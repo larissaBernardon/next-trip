@@ -1,0 +1,19 @@
+//
+//  Noronha.json
+//  NextTrip
+//
+//  Created by larissa.bernardon on 12/07/23.
+//
+
+{
+    "name": "Fernando de Noronha",
+    "country": "Brasil",
+    "countryCode": "BR",
+    "bioSummary": "Fernando de Noronha é um arquipélago paradisíaco situado no nordeste do Brasil. Com suas praias deslumbrantes, águas cristalinas e biodiversidade marinha única, Fernando de Noronha é um destino dos sonhos para os amantes da natureza e dos esportes aquáticos.",
+    "imageName": "fernando_de_noronha_image",
+    "history": "Fernando de Noronha tem uma história fascinante, que inclui períodos de colonização e passagem por diferentes administrações. A ilha já foi utilizada como presídio e, atualmente, é uma Área de Proteção Ambiental.",
+    "geography": "O arquipélago de Fernando de Noronha é composto por 21 ilhas e ilhotas. A região é caracterizada por suas falésias, praias isoladas e formações rochosas impressionantes. A natureza preservada e a rica biodiversidade fazem de Fernando de Noronha um verdadeiro paraíso.",
+    "language": "Português",
+    "currency": "Real",
+    "bestTimeToVisit": "A melhor época para visitar Fernando de Noronha é durante os meses de setembro a março, quando as condições climáticas são mais favoráveis para atividades ao ar livre e para explorar as belezas naturais da região."
+}

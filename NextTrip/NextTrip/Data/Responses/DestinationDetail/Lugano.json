@@ -1,0 +1,19 @@
+//
+//  Lugano.json
+//  NextTrip
+//
+//  Created by larissa.bernardon on 12/07/23.
+//
+
+{
+    "name": "Lugano",
+    "country": "Suíça",
+    "countryCode": "CH",
+    "bioSummary": "Lugano é uma cidade encantadora localizada na região sul da Suíça, próxima aos Alpes. Com sua beleza natural deslumbrante e seu clima ameno, Lugano é um destino popular para os amantes da natureza e para quem busca tranquilidade.",
+    "imageName": "lugano_image",
+    "history": "Lugano tem uma história rica que remonta à era romana. A cidade já foi um importante centro comercial e cultural na região e preserva muitos de seus edifícios históricos e monumentos.",
+    "geography": "Lugano está situada às margens do belo Lago de Lugano, cercada por montanhas pitorescas. A paisagem é marcada por vales verdejantes, florestas exuberantes e uma atmosfera serena.",
+    "language": "Italiano",
+    "currency": "Franco Suíço",
+    "bestTimeToVisit": "A melhor época para visitar Lugano é durante os meses de primavera e verão, quando o clima é mais quente e os jardins e parques estão em plena floração."
+}
