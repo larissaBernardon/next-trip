@@ -20,35 +20,30 @@ struct UpcomingTripsPage: View {
         }
     }
 
-
     var body: some View {
         if upcomingTrips.isEmpty {
             Text("Você ainda não possui viagens futuras.")
         } else {
-            buildContent()
-        }
-    }
-
-    func buildContent() -> some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 16) {
-                ForEach(upcomingTrips.reversed()) { trip in
-                    NavigationLink(destination: DestinationDetail(destination: trip.destination, shouldShowPlanningButton: false)) {
-                        MediumCardView(
-                            image: Image(trip.destination.imageName),
-                            width: UIScreen.main.bounds.width * 0.9,
-                            withOpacity: true,
-                            centeredTitle: trip.destination.name
-                        )
-                        .onTapGesture {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .leading, spacing: 16) {
+                    ForEach(upcomingTrips.reversed()) { trip in
+                        NavigationLink(
+                            destination: DestinationDetail(destination: trip.destination, shouldShowPlanningButton: false)
+                        ) {
+                            MediumCardView(
+                                image: Image(trip.destination.imageName),
+                                width: UIScreen.main.bounds.width * 0.9,
+                                withOpacity: true,
+                                centeredTitle: trip.destination.name
+                            )
+                            .padding(.horizontal)
+                            .background(Color(hex: "F5F8F9"))
+                            .cornerRadius(20)
                         }
-                        .padding(.horizontal)
-                        .background(Color(hex: "F5F8F9"))
-                        .cornerRadius(20)
                     }
                 }
+                .padding(.top)
             }
-            .padding(.top)
         }
     }
 }

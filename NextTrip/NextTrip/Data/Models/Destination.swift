@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Destination: Codable {
+public struct Destination: Codable, Equatable {
 
     // MARK: - Properties
 
