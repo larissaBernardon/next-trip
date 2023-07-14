@@ -85,7 +85,7 @@ struct DestinationDetail: View {
                         }
                         .sheet(isPresented: $showPlanningScreen) {
                             PlanningTripView(isPresented: $showPlanningScreen,
-                                             destination: "\(destination.name), \(destination.country)"
+                                             destination: destination
                             )
                             .onDisappear {
                                 state.isButtonEnabled.toggle()

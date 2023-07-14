@@ -11,9 +11,11 @@ struct TabBarView: View {
     @EnvironmentObject private var appState: DestinationDetailState
     @State private var selectedTab = 0
 
+    let homeContent: [Destination]
+
     var body: some View {
         TabView(selection: $selectedTab) {
-            HomeView()
+            HomeView(destinations: homeContent)
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Explorar")
@@ -44,8 +46,8 @@ struct TabBarView: View {
     }
 }
 
-struct TabBar_Previews: PreviewProvider {
-    static var previews: some View {
-        TabBarView()
-    }
-}
+//struct TabBar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TabBarView()
+//    }
+//}

@@ -67,7 +67,7 @@ struct TripDates: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd" // Set the desired date format
+        dateFormatter.dateFormat = "dd/MM/yyyy"
 
         let startDateString = try container.decode(String.self, forKey: .startDate)
         if let startDate = dateFormatter.date(from: startDateString) {

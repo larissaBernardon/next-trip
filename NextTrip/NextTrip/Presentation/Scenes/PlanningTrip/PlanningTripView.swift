@@ -14,10 +14,11 @@ struct PlanningTripView: View {
     @State private var endDate: Date?
     @State private var dateSelectionState: DateSelectionState = .none
     @State private var selectedPreferences: Set<String> = []
+    @State private var createdTrip: Trip?
 
     @Binding var isPresented: Bool
 
-    let destination: String
+    let destination: Destination
     let options = ["Cultura", "Natureza", "Economica", "Luxo", "Experiências gastronomicas", "Esportes"]
 
     enum DateSelectionState {
@@ -34,7 +35,7 @@ struct PlanningTripView: View {
                 .padding(.top, 20)
                 .padding(.leading, 20)
             
-            DestinationTextField(destinationName: destination)
+            DestinationTextField(destinationName: "\(destination.name), \(destination.country)")
 
             Text("Preferências da viagem")
                 .font(.system(size: 17, weight: .bold))
@@ -83,13 +84,9 @@ struct PlanningTripView: View {
             }
 
             Button(action: {
-                // montar objeto
-                // salvar local
-                // mostrar loading
-                // dar dismiss após
                 print(startDate)
                 print(endDate)
-                isPresented = false
+                try? createTripPlanAndSaveLocal()
             }) {
                 Text("Gerar itnerário")
                     .foregroundColor(.white)
@@ -101,6 +98,35 @@ struct PlanningTripView: View {
             }
             .disabled(dates.count < 2)
             .padding()
+        }
+    }
+
+    private func createTripPlanAndSaveLocal() throws {
+//        guard let startDate = startDate,
+//              let endDate = endDate else { return }
+
+        guard let jsonURL = Bundle.main.url(forResource: "TripPlanMadrid", withExtension: "json") else {
+            print("JSON NAO ENCONTRADO")
+            return
+        }
+
+        do {
+            let jsonData = try Data(contentsOf: jsonURL)
+            let decoder = JSONDecoder()
+            let tripPlan = try decoder.decode(TripPlan.self, from: jsonData)
+
+            let trip = Trip(
+                id: UUID().uuidString,
+                destination: destination,
+                plan: tripPlan
+            )
+
+            DataManager.saveTrip(trip)
+            createdTrip = trip
+            isPresented = false
+
+        } catch {
+            print(error)
         }
     }
 

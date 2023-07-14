@@ -1,18 +1,12 @@
-//
-//  DestinationList.json
-//  NextTrip
-//
-//  Created by larissa.bernardon on 12/07/23.
-//
 
 {
-    "destinationList": [
+    "destinations": [
         {
             "name": "Madri",
             "country": "Espanha",
             "countryCode": "ES",
             "bioSummary": "Madri é a capital da Espanha e uma das cidades mais vibrantes e cosmopolitas da Europa. Com uma rica história, arquitetura deslumbrante e uma cena cultural diversificada, Madri oferece uma experiência única para os visitantes.",
-            "imageName": "madri_image",
+            "imageName": "Madri",
             "history": "Madri possui uma rica história que remonta à Idade Média. A cidade já foi o centro político e cultural do império espanhol e testemunhou eventos históricos importantes ao longo dos séculos.",
             "geography": "Localizada no centro da Espanha, Madri está situada em uma planície elevada no coração do país. A cidade é cercada por montanhas e possui um clima mediterrâneo continental, com verões quentes e invernos suaves.",
             "language": "Espanhol",
@@ -24,7 +18,7 @@
             "country": "Brasil",
             "countryCode": "BR",
             "bioSummary": "O Rio de Janeiro é uma cidade maravilhosa, famosa por suas belas praias, paisagens deslumbrantes e cultura vibrante. Conhecida como a Cidade Maravilhosa, o Rio de Janeiro é um destino turístico popular no Brasil e no mundo.",
-            "imageName": "rio_de_janeiro_image",
+            "imageName": "Rio de Janeiro",
             "history": "O Rio de Janeiro tem uma história fascinante que remonta à época do descobrimento do Brasil. Foi a capital do país por muitos anos e já sediou eventos importantes, como a Copa do Mundo e os Jogos Olímpicos.",
             "geography": "Localizado na região sudeste do Brasil, o Rio de Janeiro possui uma geografia única, com montanhas, florestas tropicais e praias paradisíacas. A cidade é famosa pelo seu famoso cartão-postal, o Pão de Açúcar, e pelo icônico Cristo Redentor.",
             "language": "Português",
@@ -36,7 +30,7 @@
             "country": "Suíça",
             "countryCode": "CH",
             "bioSummary": "Lugano é uma cidade encantadora localizada na região sul da Suíça, próxima aos Alpes. Com sua beleza natural deslumbrante e seu clima ameno, Lugano é um destino popular para os amantes da natureza e para quem busca tranquilidade.",
-            "imageName": "lugano_image",
+            "imageName": "Lugano",
             "history": "Lugano tem uma história rica que remonta à era romana. A cidade já foi um importante centro comercial e cultural na região e preserva muitos de seus edifícios históricos e monumentos.",
             "geography": "Lugano está situada às margens do belo Lago de Lugano, cercada por montanhas pitorescas. A paisagem é marcada por vales verdejantes, florestas exuberantes e uma atmosfera serena.",
             "language": "Italiano",
@@ -48,7 +42,7 @@
             "country": "Peru",
             "countryCode": "PE",
             "bioSummary": "Cusco é uma cidade histórica localizada no Peru, conhecida por ser a antiga capital do Império Inca. Com suas ruínas impressionantes, cultura rica e paisagens deslumbrantes, Cusco é um destino imperdível para os amantes da história e da aventura.",
-            "imageName": "cusco_image",
+            "imageName": "Cusco",
             "history": "Cusco foi o centro do Império Inca e preserva muitos vestígios de sua grandiosa civilização. A cidade tem uma história fascinante, que combina elementos pré-colombianos e coloniais.",
             "geography": "Cusco está localizada na região dos Andes, a uma altitude elevada. A paisagem é dominada por montanhas imponentes, vales profundos e rios sinuosos.",
             "language": "Espanhol",
@@ -60,7 +54,7 @@
             "country": "Brasil",
             "countryCode": "BR",
             "bioSummary": "Fernando de Noronha é um arquipélago paradisíaco localizado no nordeste do Brasil. Com suas praias de areias brancas, águas cristalinas e vida marinha diversificada, é um destino dos sonhos para os amantes da natureza e do mergulho.",
-            "imageName": "fernando_de_noronha_image",
+            "imageName": "Fernando de Noronha",
             "history": "Fernando de Noronha possui uma história rica que remonta aos tempos coloniais do Brasil. A ilha já foi habitada por diferentes povos e testemunhou a presença de piratas e batalhas navais.",
             "geography": "Fernando de Noronha está localizada a cerca de 350 km da costa nordeste do Brasil, no Oceano Atlântico. O arquipélago é formado por 21 ilhas e ilhotas, sendo a maior delas a ilha principal de Fernando de Noronha.",
             "language": "Português",
@@ -69,10 +63,10 @@
         },
         {
             "name": "Patagônia",
-            "country": "Argentina e Chile",
-            "countryCode": "AR, CL",
+            "country": "Argentina",
+            "countryCode": "AR",
             "bioSummary": "A Patagônia é uma região vasta e remota localizada no sul da Argentina e do Chile. Com sua beleza natural intocada, que inclui montanhas majestosas, geleiras impressionantes e vastas planícies, a Patagônia é um paraíso para os amantes da natureza e dos esportes ao ar livre.",
-            "imageName": "patagonia_image",
+            "imageName": "Patagonia",
             "history": "A região da Patagônia tem uma história rica, com evidências de ocupação humana que remonta a milhares de anos. A área foi habitada por povos indígenas antes da chegada dos colonizadores europeus.",
             "geography": "A Patagônia abrange uma grande área no sul da Argentina e do Chile, incluindo a cordilheira dos Andes, vastas planícies, lagos e geleiras. A região é conhecida por sua paisagem diversificada e impressionante.",
             "language": "Espanhol",
@@ -84,7 +78,7 @@
             "country": "Turquia",
             "countryCode": "TR",
             "bioSummary": "Istambul é uma cidade fascinante que abrange dois continentes, Europa e Ásia. Com uma história rica e uma fusão de culturas, a cidade é um verdadeiro tesouro, oferecendo marcos históricos, mercados vibrantes e uma culinária deliciosa.",
-            "imageName": "istanbul_image",
+            "imageName": "Istambul",
             "history": "Istambul tem uma história que se estende por milênios, servindo como capital de impérios, como o Império Romano, Bizantino e Otomano. A cidade desempenhou um papel importante na história do mundo.",
             "geography": "Istambul está localizada na parte noroeste da Turquia, na fronteira entre a Europa e a Ásia, separada pelo Estreito de Bósforo. A cidade é atravessada pelo rio Golden Horn e abriga várias ilhas no Mar de Mármara.",
             "language": "Turco",
@@ -96,7 +90,7 @@
             "country": "Austrália",
             "countryCode": "AU",
             "bioSummary": "Sydney é uma cidade vibrante e cosmopolita localizada na costa leste da Austrália. Com suas praias deslumbrantes, ícones famosos e uma cena cultural diversificada, Sydney é um destino popular para turistas de todo o mundo.",
-            "imageName": "sydney_image",
+            "imageName": "Sydney",
             "history": "Sydney possui uma história fascinante que remonta aos povos aborígenes que habitavam a região há milhares de anos. A cidade foi colonizada pelos britânicos em 1788 e se tornou um importante centro comercial e cultural.",
             "geography": "Sydney está situada em uma bela baía, com um porto natural que é uma das maravilhas naturais do mundo. A cidade é cercada por praias deslumbrantes, parques nacionais e uma paisagem costeira impressionante.",
             "language": "Inglês",
@@ -104,11 +98,11 @@
             "bestTimeToVisit": "A melhor época para visitar Sydney é durante os meses de outubro a abril, quando o clima é mais quente e as atividades ao ar livre são mais agradáveis."
         },
         {
-            "name": "Nova York",
+            "name": "Nova Iorque",
             "country": "Estados Unidos",
             "countryCode": "US",
             "bioSummary": "Nova York é a cidade mais populosa dos Estados Unidos e um dos destinos turísticos mais visitados do mundo. Conhecida por sua energia vibrante, arranha-céus icônicos e uma cena cultural diversificada, Nova York é um lugar onde a vida nunca para.",
-            "imageName": "new_york_image",
+            "imageName": "Nova York",
             "history": "A história de Nova York remonta à chegada dos primeiros colonizadores europeus no século XVII. Ao longo dos séculos, a cidade se tornou um importante centro financeiro, cultural e político.",
             "geography": "Nova York está localizada no nordeste dos Estados Unidos, no estado de Nova York. A cidade é composta por cinco distritos principais: Manhattan, Brooklyn, Queens, Bronx e Staten Island.",
             "language": "Inglês",

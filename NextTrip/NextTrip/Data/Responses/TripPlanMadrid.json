@@ -1,0 +1,114 @@
+
+{
+    "dates": {
+        "startDate": "01/05/2023",
+        "endDate": "05/05/2023"
+    },
+    "days": [
+        {
+            "day": "01/08",
+            "activities": [
+                {
+                    "title": "Visita ao Museu do Prado",
+                    "description": "Explore uma das melhores coleções de arte do mundo no Museu do Prado, conhecido por suas obras-primas de artistas espanhóis como Velázquez, Goya e El Greco.",
+                    "location": {
+                        "latitude": 40.4138,
+                        "longitude": -3.6922
+                    }
+                },
+                {
+                    "title": "Jantar em um restaurante local",
+                    "description": "Desfrute da autêntica culinária espanhola em um restaurante local, onde você poderá saborear pratos tradicionais como paella, tapas e churros.",
+                    "location": {
+                        "latitude": 40.4168,
+                        "longitude": -3.7038
+                    }
+                }
+            ]
+        },
+        {
+            "day": "02/08",
+            "activities": [
+                {
+                    "title": "Visita ao Palácio Real de Madrid",
+                    "description": "Explore a impressionante residência oficial da família real espanhola, o Palácio Real de Madrid, com seus salões luxuosos, jardins e belas vistas.",
+                    "location": {
+                        "latitude": 40.4179,
+                        "longitude": -3.7143
+                    }
+                },
+                {
+                    "title": "Almoço em um mercado local",
+                    "description": "Experimente a diversidade da culinária espanhola em um mercado local, onde você encontrará uma variedade de bancas com alimentos frescos, queijos, frutas e muito mais.",
+                    "location": {
+                        "latitude": 40.4156,
+                        "longitude": -3.7078
+                    }
+                }
+            ]
+        },
+        {
+            "day": "03/08",
+            "activities": [
+                {
+                    "title": "Visita ao Museu Reina Sofia",
+                    "description": "Explore o Museu Reina Sofia, dedicado à arte moderna e contemporânea, e admire obras famosas como 'Guernica' de Picasso e obras de Dalí e Miró.",
+                    "location": {
+                        "latitude": 40.4086,
+                        "longitude": -3.6949
+                    }
+                },
+                {
+                    "title": "Jantar em um restaurante gourmet",
+                    "description": "Desfrute de uma experiência gastronômica refinada em um restaurante gourmet, onde chefs renomados combinam ingredientes de alta qualidade em pratos requintados.",
+                    "location": {
+                        "latitude": 40.4191,
+                        "longitude": -3.6923
+                    }
+                }
+            ]
+        },
+        {
+            "day": "04/08",
+            "activities": [
+                {
+                    "title": "Explorar o bairro de Chueca",
+                    "description": "Passeie pelo animado bairro de Chueca, conhecido por sua atmosfera vibrante, lojas da moda, bares, restaurantes e cafés charmosos.",
+                    "location": {
+                        "latitude": 40.4239,
+                        "longitude": -3.6970
+                    }
+                },
+                {
+                    "title": "Degustação de vinhos e tapas",
+                    "description": "Desfrute de uma degustação de vinhos espanhóis em uma vinoteca local, acompanhada de deliciosas tapas tradicionais.",
+                    "location": {
+                        "latitude": 40.4250,
+                        "longitude": -3.7021
+                    }
+                }
+            ]
+        },
+        {
+            "day": "05/08",
+            "activities": [
+                {
+                    "title": "Visita ao Parque do Retiro",
+                    "description": "Relaxe e desfrute de um passeio pelo Parque do Retiro, um belo parque com jardins exuberantes, lagos serenos e o famoso Palácio de Cristal.",
+                    "location": {
+                        "latitude": 40.4139,
+                        "longitude": -3.6828
+                    }
+                },
+                {
+                    "title": "Almoço em um terraço com vista",
+                    "description": "Desfrute de um almoço com vista panorâmica da cidade em um dos terraços encantadores de Madrid, apreciando a comida e a atmosfera deslumbrantes.",
+                    "location": {
+                        "latitude": 40.4187,
+                        "longitude": -3.6919
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -9,10 +9,19 @@ import SwiftUI
 
 struct SignUpView: View {
     @State private var isLoggedIn = false
+    @State private var destinationList: DestinationList?
     
     var body: some View {
         if isLoggedIn {
-            TabBarView()
+            if let destinations = destinationList?.destinations, !destinations.isEmpty {
+                TabBarView(homeContent: destinations)
+            } else {
+                ZStack {
+                    signInContent()
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                }
+            }
         } else {
             signInContent()
         }
@@ -43,6 +52,10 @@ struct SignUpView: View {
                 
                 Button(action: {
                     isLoggedIn = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        getHomeContent()
+                    }
                 }) {
                     HStack(alignment: .top, spacing: 15) {
                         Image("logo")
@@ -71,6 +84,24 @@ struct SignUpView: View {
                 
                 Spacer()
             }
+        }
+    }
+
+    func getHomeContent() {
+        guard let jsonURL = Bundle.main.url(forResource: "DestinationList", withExtension: "json") else {
+            // Arquivo JSON não encontrado
+            print("JSON NAO ENCONTRADO")
+            return
+        }
+
+        do {
+            let jsonData = try Data(contentsOf: jsonURL)
+            let decoder = JSONDecoder()
+            destinationList = try decoder.decode(DestinationList.self, from: jsonData)
+        } catch {
+            // Erro ao carregar ou decodificar o JSON
+            print("Erro ao carregar ou decodificar o JSON: \(error)")
+            print("Descrição do erro: \(error.localizedDescription)")
         }
     }
 }
