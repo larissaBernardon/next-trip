@@ -9,12 +9,21 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text("Profile")
-    }
-}
+        VStack(spacing: 30) {
+            Button(action: {
+                let defaults = UserDefaults.standard
+                let oldValue = defaults.dictionaryRepresentation()
+                print("Valor antes de limpar as viagens locais: \(oldValue)")
 
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
+                DataManager.clearUserDefaults()
+
+                let newValue = defaults.dictionaryRepresentation()
+                print("Valor depois de limpar as viagens locais: \(newValue)")
+            }) {
+                Text("Limpar viagens locais")
+            }
+
+            Text("Sair")
+        }
     }
 }

@@ -14,11 +14,17 @@ struct PlanningTripView: View {
     @State private var endDate: Date?
     @State private var dateSelectionState: DateSelectionState = .none
     @State private var selectedPreferences: Set<String> = []
-    @State private var createdTrip: Trip?
-
     @Binding var isPresented: Bool
 
+    @Binding var createdTrip: Trip?
     let destination: Destination
+
+    init(isPresented: Binding<Bool>, destination: Destination, createdTrip: Binding<Trip?>) {
+        self._isPresented = isPresented
+        self.destination = destination
+        self._createdTrip = createdTrip
+    }
+
     let options = ["Cultura", "Natureza", "Economica", "Luxo", "Experiências gastronomicas", "Esportes"]
 
     enum DateSelectionState {
@@ -84,8 +90,6 @@ struct PlanningTripView: View {
             }
 
             Button(action: {
-                print(startDate)
-                print(endDate)
                 try? createTripPlanAndSaveLocal()
             }) {
                 Text("Gerar itnerário")
@@ -102,11 +106,12 @@ struct PlanningTripView: View {
     }
 
     private func createTripPlanAndSaveLocal() throws {
-//        guard let startDate = startDate,
-//              let endDate = endDate else { return }
+        guard let startDate = startDate,
+              let endDate = endDate else { return }
 
-        guard let jsonURL = Bundle.main.url(forResource: "TripPlanMadrid", withExtension: "json") else {
-            print("JSON NAO ENCONTRADO")
+        guard let jsonURL = Bundle.main.url(forResource: "TripPlan\(destination.name.replacingOccurrences(of: " ", with: ""))", withExtension: "json") else {
+            print("TripPlan\(destination.name.replacingOccurrences(of: " ", with: ""))")
+            print("json não encontrado")
             return
         }
 
@@ -116,7 +121,7 @@ struct PlanningTripView: View {
             let tripPlan = try decoder.decode(TripPlan.self, from: jsonData)
 
             let trip = Trip(
-                id: UUID().uuidString,
+                id: "\(destination.name)\(startDate)",
                 destination: destination,
                 plan: tripPlan
             )

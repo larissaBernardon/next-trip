@@ -1,7 +1,7 @@
 import Foundation
 
-public struct Trip: Codable {
-    let id: String
+public struct Trip: Codable, Identifiable {
+    public let id: String
     let destination: Destination
     let plan: TripPlan
 

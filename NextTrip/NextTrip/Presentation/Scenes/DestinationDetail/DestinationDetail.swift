@@ -21,11 +21,14 @@ struct DestinationDetail: View {
     @EnvironmentObject private var state: DestinationDetailState
     @Environment(\.presentationMode) var presentationMode
     @State private var showPlanningScreen = false
+    @State private var createdTrip: Trip?
 
     let destination: Destination
+    let shouldShowPlanningButton: Bool
 
-    init(destination: Destination) {
+    init(destination: Destination, shouldShowPlanningButton: Bool) {
         self.destination = destination
+        self.shouldShowPlanningButton = shouldShowPlanningButton
 
         setupNavigationStyle()
     }
@@ -68,28 +71,30 @@ struct DestinationDetail: View {
 
                 HStack(alignment: .center) {
                     VStack(alignment: .leading, spacing: 30) {
-                        Button(action: {
-                            showPlanningScreen = true
-                        }) {
-                            Text(state.isButtonEnabled ? "Planejar Viagem" : "Ver Planejamento")
-                                .font(.headline)
-                                .foregroundColor(state.isButtonEnabled ? .white : .black)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(state.isButtonEnabled ? Color.black : Color.white)
-                                .cornerRadius(10)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color.black, lineWidth: 1)
-                                )
-                        }
-                        .sheet(isPresented: $showPlanningScreen) {
-                            PlanningTripView(isPresented: $showPlanningScreen,
-                                             destination: destination
-                            )
-                            .onDisappear {
-                                state.isButtonEnabled.toggle()
-                                state.shouldNavigateToTrips = true
+                        if shouldShowPlanningButton {
+                            Button(action: {
+                                showPlanningScreen = true
+                            }) {
+                                Text("Planejar Viagem")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.black)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.black, lineWidth: 1)
+                                    )
+                            }
+                            .sheet(isPresented: $showPlanningScreen) {
+                                PlanningTripView(isPresented: $showPlanningScreen, destination: destination, createdTrip: $createdTrip)
+                                .onDisappear {
+                                    if createdTrip != nil {
+                                        //state.isButtonEnabled = false
+                                        state.shouldNavigateToTrips = true
+                                    }
+                                }
                             }
                         }
 
@@ -165,22 +170,22 @@ struct DestinationDetail: View {
     }
 }
 
-struct DestinationDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        DestinationDetail(destination: Destination(
-            name: "Madrid",
-            country: "Espanha",
-            countryCode: "ES",
-            bioSummary: "Madri, a capital da Espanha, é uma cidade vibrante conhecida por sua rica história, arte e atmosfera animada.",
-            imageName: "Madrid",
-            history: "Madrid possui uma história fascinante que remonta séculos. Foi influenciada por várias culturas e civilizações ao longo do tempo.",
-            geography: "Madri está localizada no centro da Espanha, cercada por montanhas. A cidade é conhecida por sua bela arquitetura, espaçosos parques e amplas avenidas.",
-            language: "Espanhol",
-            currency: "Euro (€)",
-            bestTimeToVisit: "A primavera (abril a junho) e o outono (setembro a novembro) são considerados os melhores momentos para visitar Madri devido ao clima agradável e aos eventos culturais."
-        ))
-    }
-}
+//struct DestinationDetail_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DestinationDetail(destination: Destination(
+//            name: "Madrid",
+//            country: "Espanha",
+//            countryCode: "ES",
+//            bioSummary: "Madri, a capital da Espanha, é uma cidade vibrante conhecida por sua rica história, arte e atmosfera animada.",
+//            imageName: "Madrid",
+//            history: "Madrid possui uma história fascinante que remonta séculos. Foi influenciada por várias culturas e civilizações ao longo do tempo.",
+//            geography: "Madri está localizada no centro da Espanha, cercada por montanhas. A cidade é conhecida por sua bela arquitetura, espaçosos parques e amplas avenidas.",
+//            language: "Espanhol",
+//            currency: "Euro (€)",
+//            bestTimeToVisit: "A primavera (abril a junho) e o outono (setembro a novembro) são considerados os melhores momentos para visitar Madri devido ao clima agradável e aos eventos culturais."
+//        ))
+//    }
+//}
 
 struct HeaderBottomView: View {
     var body: some View {

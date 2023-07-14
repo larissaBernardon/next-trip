@@ -35,7 +35,7 @@ public struct Prompts {
     """
 
     let createTripPlan = """
-    A partit das seguintes estruturas:
+    A partir das seguintes estruturas:
 
     struct TripPlan: Codable {
         let dates: TripDates
@@ -68,4 +68,39 @@ public struct Prompts {
     O campo day deve conter a data do dia no fotmato "dd/mm"
     Retorne em formato json para que minha aplicação consiga interpretar.
     """
+
+    let createRioCurrentTripPlan = """
+    A partit das seguintes estruturas:
+
+   struct TripPlan: Codable {
+       let dates: TripDates
+       let days: [Day]
+   }
+
+   struct Day: Codable {
+       let day: String
+       let activities: [Activity]
+   }
+
+   struct TripDates: Codable {
+       let startDate: Date
+       let endDate: Date
+   }
+
+   struct Activity: Codable {
+       let title: String
+       let description: String
+       let location: Location
+   }
+
+   struct Location: Codable {
+       let latitude: Double
+       let longitude: Double
+   }
+
+   Monte um roteiro de 4 dias de viagem no Rio de janeiro levando em consideração as seguintes preferencias de viagem: Cultura, Atividades ao ar livre, Economico.
+   O conteudo da resposta deve ser em português.
+   O campo day deve conter a data do dia no fotmato "dd/mm"
+   Retorne em formato json para que minha aplicação consiga interpretar.
+   """
 }

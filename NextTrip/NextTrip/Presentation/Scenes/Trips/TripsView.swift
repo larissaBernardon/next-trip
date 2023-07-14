@@ -1,15 +1,21 @@
-//
-//  TripsView.swift
-//  NextTrip
-//
-//  Created by larissa.bernardon on 15/05/23.
-//
-
 import SwiftUI
+import Combine
 
 struct TripsView: View {
+    @StateObject private var dataManager = DataManager()
+    @State private var activeTrip: Trip?
+    @State private var upcomingTrips: [Trip] = []
     @State private var selectedIndex = 0
-    private let sectionTitles = ["Ativas", "Próximas", "Passadas"]
+    @State private var cancellables = Set<AnyCancellable>()
+
+    private var sectionContent: [String: AnyView] {
+        let content: [String: AnyView] = [
+            "Ativas": AnyView(ActiveTripsPage(trip: activeTrip)),
+            "Próximas": AnyView(UpcomingTripsPage(trips: upcomingTrips))
+            //            "Passadas": AnyView(UpcomingTripsPage(trips: upcomingTrips))
+        ]
+        return content
+    }
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -19,45 +25,39 @@ struct TripsView: View {
                 .padding(.top, 32)
 
             HStack(spacing: 20) {
-                ForEach(sectionTitles.indices, id: \.self) { index in
+                ForEach(sectionContent.keys.sorted(), id: \.self) { key in
                     Button(action: {
-                        selectedIndex = index
+                        selectedIndex = sectionContent.keys.sorted().firstIndex(of: key) ?? 0
                     }) {
-                        Text(sectionTitles[index])
+                        Text(key)
                             .font(.body)
-                            .foregroundColor(selectedIndex == index ? .black : .gray)
+                            .foregroundColor(selectedIndex == sectionContent.keys.sorted().firstIndex(of: key) ? .black : .gray)
                             .padding(.vertical, 8)
                             .overlay(
-                                selectedIndex == index ?
+                                selectedIndex == sectionContent.keys.sorted().firstIndex(of: key) ?
                                 Rectangle()
                                     .frame(height: 2)
                                     .padding(.top, 28)
                                     .foregroundColor(.black) :
-                                nil
+                                    nil
                             )
                     }
                 }
             }
 
             TabView(selection: $selectedIndex) {
-                ActiveTripsPage()
-                .tag(0)
-
-                UpcomingTripsPage()
-                .tag(1)
-
-                ActiveTripsPage()
-                .tag(2)
+                ForEach(sectionContent.keys.sorted(), id: \.self) { key in
+                    sectionContent[key]
+                        .tag(sectionContent.keys.sorted().firstIndex(of: key) ?? 0)
+                }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
         }
         .padding(.all)
         .background(Color(hex: "F5F8F9"))
-    }
-}
-
-struct TripsView_Previews: PreviewProvider {
-    static var previews: some View {
-        TripsView()
+        .onAppear {
+            activeTrip = DataManager.getCurrentTrips()
+            upcomingTrips = DataManager.getAllTrips()
+        }
     }
 }

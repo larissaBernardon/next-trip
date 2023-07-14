@@ -50,10 +50,10 @@ struct Day: Codable {
 }
 
 struct TripDates: Codable {
-    let startDate: Date
-    let endDate: Date
+    let startDate: String
+    let endDate: String
 
-    init(startDate: Date, endDate: Date) {
+    init(startDate: String, endDate: String) {
         self.startDate = startDate
         self.endDate = endDate
     }
@@ -69,23 +69,8 @@ struct TripDates: Codable {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
 
-        let startDateString = try container.decode(String.self, forKey: .startDate)
-        if let startDate = dateFormatter.date(from: startDateString) {
-            self.startDate = startDate
-        } else {
-            throw DecodingError.dataCorruptedError(forKey: .startDate,
-                                                   in: container,
-                                                   debugDescription: "Invalid start date format")
-        }
-
-        let endDateString = try container.decode(String.self, forKey: .endDate)
-        if let endDate = dateFormatter.date(from: endDateString) {
-            self.endDate = endDate
-        } else {
-            throw DecodingError.dataCorruptedError(forKey: .endDate,
-                                                   in: container,
-                                                   debugDescription: "Invalid end date format")
-        }
+        startDate = try container.decode(String.self, forKey: .startDate)
+        endDate = try container.decode(String.self, forKey: .endDate)
     }
 }
 

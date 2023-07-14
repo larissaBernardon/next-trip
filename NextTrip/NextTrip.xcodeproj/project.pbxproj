@@ -25,8 +25,9 @@
 		6A0C36512A5F52F200E9D23E /* MultipleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C36502A5F52F200E9D23E /* MultipleSelectionView.swift */; };
 		6A0C365A2A5F614200E9D23E /* DestinationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C36592A5F614200E9D23E /* DestinationList.swift */; };
 		6A0C365D2A5F62DD00E9D23E /* Prompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C365C2A5F62DD00E9D23E /* Prompts.swift */; };
-		6A0C365F2A60399600E9D23E /* TripPlanMadrid.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A0C365E2A60399600E9D23E /* TripPlanMadrid.json */; };
+		6A0C365F2A60399600E9D23E /* TripPlanMadri.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A0C365E2A60399600E9D23E /* TripPlanMadri.json */; };
 		6A0C36612A60F22900E9D23E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C36602A60F22900E9D23E /* DataManager.swift */; };
+		6A0C36652A61897B00E9D23E /* TripPlanRiodeJaneiro.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A0C36642A61897B00E9D23E /* TripPlanRiodeJaneiro.json */; };
 		6A31521A2A1C48CF000E1D7A /* ActiveTripsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3152192A1C48CF000E1D7A /* ActiveTripsPage.swift */; };
 		6A31521C2A1C4D74000E1D7A /* UpcomingTripsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31521B2A1C4D74000E1D7A /* UpcomingTripsPage.swift */; };
 		6A31521E2A1C5BB9000E1D7A /* ItineraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31521D2A1C5BB9000E1D7A /* ItineraryView.swift */; };
@@ -90,8 +91,9 @@
 		6A0C36502A5F52F200E9D23E /* MultipleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionView.swift; sourceTree = "<group>"; };
 		6A0C36592A5F614200E9D23E /* DestinationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationList.swift; sourceTree = "<group>"; };
 		6A0C365C2A5F62DD00E9D23E /* Prompts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompts.swift; sourceTree = "<group>"; };
-		6A0C365E2A60399600E9D23E /* TripPlanMadrid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TripPlanMadrid.json; sourceTree = "<group>"; };
+		6A0C365E2A60399600E9D23E /* TripPlanMadri.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TripPlanMadri.json; sourceTree = "<group>"; };
 		6A0C36602A60F22900E9D23E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		6A0C36642A61897B00E9D23E /* TripPlanRiodeJaneiro.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TripPlanRiodeJaneiro.json; sourceTree = "<group>"; };
 		6A3152192A1C48CF000E1D7A /* ActiveTripsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTripsPage.swift; sourceTree = "<group>"; };
 		6A31521B2A1C4D74000E1D7A /* UpcomingTripsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTripsPage.swift; sourceTree = "<group>"; };
 		6A31521D2A1C5BB9000E1D7A /* ItineraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryView.swift; sourceTree = "<group>"; };
@@ -163,7 +165,8 @@
 			children = (
 				6A0C36362A5F47DC00E9D23E /* DestinationDetail */,
 				6A0C364E2A5F4CF400E9D23E /* DestinationList.json */,
-				6A0C365E2A60399600E9D23E /* TripPlanMadrid.json */,
+				6A0C365E2A60399600E9D23E /* TripPlanMadri.json */,
+				6A0C36642A61897B00E9D23E /* TripPlanRiodeJaneiro.json */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -544,8 +547,9 @@
 				6A0C363E2A5F496600E9D23E /* Cusco.json in Resources */,
 				6A0C364D2A5F4C8900E9D23E /* Paris.json in Resources */,
 				6A0C363A2A5F483700E9D23E /* Rio.json in Resources */,
+				6A0C36652A61897B00E9D23E /* TripPlanRiodeJaneiro.json in Resources */,
 				6A0C36442A5F4A8700E9D23E /* NY.json in Resources */,
-				6A0C365F2A60399600E9D23E /* TripPlanMadrid.json in Resources */,
+				6A0C365F2A60399600E9D23E /* TripPlanMadri.json in Resources */,
 				6A0C36382A5F47FF00E9D23E /* Madrid.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,94 @@
+
+{
+  "dates": {
+    "startDate": "14/07/2023",
+    "endDate": "17/07/2023"
+  },
+  "days": [
+    {
+      "day": "14/07",
+      "activities": [
+        {
+          "title": "Visita ao Museu de Arte do Rio",
+          "description": "Explore a arte e cultura carioca no Museu de Arte do Rio.",
+          "location": {
+            "latitude": -22.906714,
+            "longitude": -43.172369
+          }
+        },
+        {
+          "title": "Passeio pelo Centro Histórico",
+          "description": "Conheça as ruas e prédios históricos do Centro do Rio de Janeiro.",
+          "location": {
+            "latitude": -22.908752,
+            "longitude": -43.179680
+          }
+        }
+      ]
+    },
+    {
+      "day": "15/07",
+      "activities": [
+        {
+          "title": "Trilha na Pedra da Gávea",
+          "description": "Aventure-se em uma trilha com uma vista deslumbrante na Pedra da Gávea.",
+          "location": {
+            "latitude": -22.989755,
+            "longitude": -43.288361
+          }
+        },
+        {
+          "title": "Praia de Ipanema",
+          "description": "Relaxe na famosa praia de Ipanema e aproveite o pôr do sol.",
+          "location": {
+            "latitude": -22.985086,
+            "longitude": -43.203554
+          }
+        }
+      ]
+    },
+    {
+      "day": "16/07",
+      "activities": [
+        {
+          "title": "Visita ao Museu do Amanhã",
+          "description": "Explore a ciência e tecnologia no Museu do Amanhã.",
+          "location": {
+            "latitude": -22.895741,
+            "longitude": -43.177188
+          }
+        },
+        {
+          "title": "Lapa",
+          "description": "Curta a noite carioca na Lapa, conhecida por sua música e vida noturna.",
+          "location": {
+            "latitude": -22.913714,
+            "longitude": -43.179459
+          }
+        }
+      ]
+    },
+    {
+      "day": "17/07",
+      "activities": [
+        {
+          "title": "Visita ao Parque Lage",
+          "description": "Explore os jardins e a arquitetura do Parque Lage.",
+          "location": {
+            "latitude": -22.963039,
+            "longitude": -43.213618
+          }
+        },
+        {
+          "title": "Praia de Copacabana",
+          "description": "Aproveite o dia na famosa praia de Copacabana.",
+          "location": {
+            "latitude": -22.973713,
+            "longitude": -43.185803
+          }
+        }
+      ]
+    }
+  ]
+}
+
