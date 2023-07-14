@@ -28,6 +28,7 @@
 		6A0C365F2A60399600E9D23E /* TripPlanMadri.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A0C365E2A60399600E9D23E /* TripPlanMadri.json */; };
 		6A0C36612A60F22900E9D23E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C36602A60F22900E9D23E /* DataManager.swift */; };
 		6A0C36652A61897B00E9D23E /* TripPlanRiodeJaneiro.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A0C36642A61897B00E9D23E /* TripPlanRiodeJaneiro.json */; };
+		6A0C36672A61A7E500E9D23E /* TripPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C36662A61A7E500E9D23E /* TripPlanView.swift */; };
 		6A31521A2A1C48CF000E1D7A /* ActiveTripsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3152192A1C48CF000E1D7A /* ActiveTripsPage.swift */; };
 		6A31521C2A1C4D74000E1D7A /* UpcomingTripsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31521B2A1C4D74000E1D7A /* UpcomingTripsPage.swift */; };
 		6A31521E2A1C5BB9000E1D7A /* ItineraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31521D2A1C5BB9000E1D7A /* ItineraryView.swift */; };
@@ -94,6 +95,7 @@
 		6A0C365E2A60399600E9D23E /* TripPlanMadri.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TripPlanMadri.json; sourceTree = "<group>"; };
 		6A0C36602A60F22900E9D23E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		6A0C36642A61897B00E9D23E /* TripPlanRiodeJaneiro.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TripPlanRiodeJaneiro.json; sourceTree = "<group>"; };
+		6A0C36662A61A7E500E9D23E /* TripPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanView.swift; sourceTree = "<group>"; };
 		6A3152192A1C48CF000E1D7A /* ActiveTripsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTripsPage.swift; sourceTree = "<group>"; };
 		6A31521B2A1C4D74000E1D7A /* UpcomingTripsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTripsPage.swift; sourceTree = "<group>"; };
 		6A31521D2A1C5BB9000E1D7A /* ItineraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryView.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				6A5F13032A367B11008CF629 /* DestinationDetail.swift */,
+				6A0C36662A61A7E500E9D23E /* TripPlanView.swift */,
 			);
 			path = DestinationDetail;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				6A5F13042A367B11008CF629 /* DestinationDetail.swift in Sources */,
 				6AFEF63D2A17F78300A53349 /* SplashView.swift in Sources */,
 				6AFBCD222A1323CE0050EC95 /* TripsView.swift in Sources */,
+				6A0C36672A61A7E500E9D23E /* TripPlanView.swift in Sources */,
 				6A0C36612A60F22900E9D23E /* DataManager.swift in Sources */,
 				6AFBCD1F2A1321D20050EC95 /* HomeView.swift in Sources */,
 				6AFEF6342A15973100A53349 /* MediumCardView.swift in Sources */,

@@ -38,7 +38,7 @@ struct HomeView: View {
                         HStack(spacing: 20) {
                             ForEach(destinations.indices, id: \.self) { index in
                                 let destination = destinations[index]
-                                NavigationLink(destination: DestinationDetail(destination: destinations[index], shouldShowPlanningButton: true)) {
+                                NavigationLink(destination: DestinationDetail(destination: destinations[index], actionType: .planning)) {
                                     MediumCardView(image: Image(destination.imageName), withOpacity: true, centeredTitle: destination.name)
                                 }
                                 .navigationBarBackButtonHidden(true)

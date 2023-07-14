@@ -8,58 +8,82 @@
 import SwiftUI
 
 struct ItineraryView: View {
+    let activities: [Activity]
+
     var body: some View {
-        VStack(spacing: 20) {
-            VStack(alignment: .leading, spacing: 10) {
-                ForEach(itineraryData, id: \.self) { itineraryPoint in
-                    VStack(alignment: .leading, spacing: 5) {
-                        HStack(spacing: 10) {
-                            Text(itineraryPoint.time)
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-
-                            Text(itineraryPoint.title)
-                                .font(.headline)
-                                .foregroundColor(.darkGray)
-
-                            Spacer()
-                        }
-
-                        if itineraryPoint != itineraryData.last {
-                            Rectangle()
-                                .fill(Color.mediumGray)
-                                .frame(width: 2, height: 60)
-                                .padding(.leading)
-                        }
+        ScrollView(.vertical) {
+            HStack {
+                VerticalBar(count: activities.count)
+                VStack(spacing: 20) {
+                    ForEach(activities.indices, id: \.self) { index in
+                        ItineraryRow(activity: activities[index])
                     }
-                }
-            }
-            .padding(20)
-            .background(Color.white)
-            .cornerRadius(10)
-            .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 0, y: 2)
 
-            Spacer()
+                    Spacer()
+                }
+                //.background(Color.red)
+                .padding()
+            }
+            .frame(maxHeight: .infinity)
+            //.background(Color.yellow)
         }
-        .padding()
     }
 }
 
-struct ItineraryPoint: Identifiable, Equatable, Hashable {
-    let id = UUID()
-    let title: String
-    let time: String
+struct ItineraryRow: View {
+    let activity: Activity
+
+    var body: some View {
+        VStack(spacing: 10) {
+            VStack(alignment: .leading, spacing: 5) {
+                Text(activity.title)
+                    .font(.headline)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .foregroundColor(.black)
+
+                Text(activity.description)
+                    .font(.subheadline)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(4)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .foregroundColor(.gray)
+
+                Spacer()
+
+                HStack {
+                    Text("Visualizar no mapa")
+                        .font(.subheadline)
+                        .foregroundColor(Color.blue)
+                    Image(systemName: "map")
+                        .font(.system(size: 20))
+                        .foregroundColor(Color.blue)
+                }
+            }
+            .background(Color.white)
+            .frame(maxWidth: .infinity)
+            .padding()
+        }
+        .background(Color.white)
+        .cornerRadius(10)
+        .frame(maxWidth: .infinity, maxHeight: 150)
+        .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 0, y: 2)
+    }
 }
 
-let itineraryData: [ItineraryPoint] = [
-    ItineraryPoint(title: "Ponto de Partida", time: "09:00"),
-    ItineraryPoint(title: "Ponto Intermediário 1", time: "10:30"),
-    ItineraryPoint(title: "Ponto Intermediário 2", time: "12:00"),
-    ItineraryPoint(title: "Destino", time: "14:00")
-]
+struct VerticalBar: View {
+    let count: Int
 
-struct IineraryView_Previews: PreviewProvider {
-    static var previews: some View {
-        ItineraryView()
+    var body: some View {
+        VStack(spacing: 0) {
+            ForEach(0..<count) { _ in
+                Rectangle()
+                    .strokeBorder(style: StrokeStyle(lineWidth: 2, dash: [5]))
+                    .frame(width: 2, height: 150)
+                    .padding(.leading)
+                    .foregroundColor(.darkGray)
+            }
+        }
     }
 }

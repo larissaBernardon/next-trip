@@ -16,6 +16,11 @@ private enum CoordinateSpaces {
     case scrollView
 }
 
+enum ButtonType {
+    case planning
+    case viewTripPlan
+}
+
 struct DestinationDetail: View {
 
     @EnvironmentObject private var state: DestinationDetailState
@@ -23,12 +28,14 @@ struct DestinationDetail: View {
     @State private var showPlanningScreen = false
     @State private var createdTrip: Trip?
 
+    let trip: Trip?
     let destination: Destination
-    let shouldShowPlanningButton: Bool
+    let actionType: ButtonType
 
-    init(destination: Destination, shouldShowPlanningButton: Bool) {
+    init(trip: Trip? = nil, destination: Destination, actionType: ButtonType) {
         self.destination = destination
-        self.shouldShowPlanningButton = shouldShowPlanningButton
+        self.actionType = actionType
+        self.trip = trip
 
         setupNavigationStyle()
     }
@@ -71,7 +78,7 @@ struct DestinationDetail: View {
 
                 HStack(alignment: .center) {
                     VStack(alignment: .leading, spacing: 30) {
-                        if shouldShowPlanningButton {
+                        if actionType == .planning {
                             Button(action: {
                                 showPlanningScreen = true
                             }) {
@@ -89,12 +96,25 @@ struct DestinationDetail: View {
                             }
                             .sheet(isPresented: $showPlanningScreen) {
                                 PlanningTripView(isPresented: $showPlanningScreen, destination: destination, createdTrip: $createdTrip)
-                                .onDisappear {
-                                    if createdTrip != nil {
-                                        //state.isButtonEnabled = false
-                                        state.shouldNavigateToTrips = true
+                                    .onDisappear {
+                                        if createdTrip != nil {
+                                            state.shouldNavigateToTrips = true
+                                        }
                                     }
-                                }
+                            }
+                        } else if actionType == .viewTripPlan {
+                            NavigationLink(destination: TripPlanView(trip: trip)) {
+                                Text("Ver plano de viagem")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.black)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.black, lineWidth: 1)
+                                    )
                             }
                         }
 
@@ -169,23 +189,6 @@ struct DestinationDetail: View {
         return flagString.isEmpty ? nil : flagString
     }
 }
-
-//struct DestinationDetail_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DestinationDetail(destination: Destination(
-//            name: "Madrid",
-//            country: "Espanha",
-//            countryCode: "ES",
-//            bioSummary: "Madri, a capital da Espanha, é uma cidade vibrante conhecida por sua rica história, arte e atmosfera animada.",
-//            imageName: "Madrid",
-//            history: "Madrid possui uma história fascinante que remonta séculos. Foi influenciada por várias culturas e civilizações ao longo do tempo.",
-//            geography: "Madri está localizada no centro da Espanha, cercada por montanhas. A cidade é conhecida por sua bela arquitetura, espaçosos parques e amplas avenidas.",
-//            language: "Espanhol",
-//            currency: "Euro (€)",
-//            bestTimeToVisit: "A primavera (abril a junho) e o outono (setembro a novembro) são considerados os melhores momentos para visitar Madri devido ao clima agradável e aos eventos culturais."
-//        ))
-//    }
-//}
 
 struct HeaderBottomView: View {
     var body: some View {

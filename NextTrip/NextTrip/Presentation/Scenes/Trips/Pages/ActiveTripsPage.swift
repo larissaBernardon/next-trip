@@ -16,7 +16,7 @@ public struct ActiveTripsPage: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
                 NavigationLink(
-                    destination: DestinationDetail(destination: trip.destination, shouldShowPlanningButton: false)
+                    destination: DestinationDetail(trip: trip, destination: trip.destination, actionType: .viewTripPlan)
                 ) {
                     MediumCardView(
                         image: Image(trip.destination.imageName),

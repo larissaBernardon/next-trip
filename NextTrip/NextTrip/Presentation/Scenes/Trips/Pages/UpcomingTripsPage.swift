@@ -28,7 +28,7 @@ struct UpcomingTripsPage: View {
                 VStack(alignment: .leading, spacing: 16) {
                     ForEach(upcomingTrips.reversed()) { trip in
                         NavigationLink(
-                            destination: DestinationDetail(destination: trip.destination, shouldShowPlanningButton: false)
+                            destination: DestinationDetail(trip: trip, destination: trip.destination, actionType: .viewTripPlan)
                         ) {
                             MediumCardView(
                                 image: Image(trip.destination.imageName),
